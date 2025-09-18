@@ -1,0 +1,11 @@
+
+/* Polished additions */
+.container{max-width:1000px;margin:18px auto;padding:0 16px;}
+.btn{display:inline-block;padding:10px 14px;background:#2d3e50;color:#fff;border-radius:6px;text-decoration:none;}
+.timeline{border-left:2px solid #e0e0e0;padding-left:18px;margin:14px 0;}
+.timeline-item{margin-bottom:18px;padding-left:12px;}
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;}
+.skill-card, .project-card{background:#fff;padding:12px;border-radius:8px;box-shadow:0 2px 6px rgba(0,0,0,0.06);}
+.cert-card{min-height:120px;}
+.site-nav{margin:10px 0;text-align:center;}
+.site-nav a{color:#2d3e50;text-decoration:none;margin:0 8px;}

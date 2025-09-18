@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Certificates - Charity Chepkirui</title>
+  <link rel="stylesheet" href="assets/css/meyawo.css">
+  <style>
+    .cert-grid { display:grid; grid-template-columns: repeat(auto-fit,minmax(240px,1fr)); gap:16px; margin:20px 0; }
+    .cert-card { background:#fff; padding:16px; border-radius:8px; box-shadow:0 2px 6px rgba(0,0,0,0.08); text-align:center; }
+    .cert-card h3{ margin:8px 0; font-size:1.05rem; }
+    .cert-actions a{ margin:0 6px; text-decoration:none; padding:8px 12px; border-radius:6px; background:#2d3e50; color:#fff; }
+  </style>
+</head>
+<body>
+  <header><h1>Certificates</h1></header>
+  <main class="container">
+    <p>Below are sample certificates. Add your own files to <code>/certs/</code> and update <code>certs/certs.json</code>.</p>
+    <div id="cert-grid" class="cert-grid"></div>
+  </main>
+<script>
+async function loadCerts(){
+  const r = await fetch('certs/certs.json');
+  const certs = await r.json();
+  const grid = document.getElementById('cert-grid');
+  grid.innerHTML = '';
+  certs.forEach(c=>{
+    const div = document.createElement('div'); div.className='cert-card';
+    div.innerHTML = `<h3>${c.title}</h3><div class="cert-actions"><a href="certs/${c.file}" target="_blank">View</a><a href="${c.verify}" target="_blank">Verify</a></div>`;
+    grid.appendChild(div);
+  });
+}
+loadCerts();
+</script>
+</body>
+</html>

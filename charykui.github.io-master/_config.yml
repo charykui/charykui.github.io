@@ -1,0 +1,26 @@
+title: "Charity Chepkirui - Portfolio"
+description: "Cloud & Cybersecurity Portfolio"
+baseurl: ""
+url: ""
+collections:
+  projects:
+    output: true
+  labs:
+    output: true
+  certifications:
+    output: true
+  testimonials:
+    output: true
+defaults:
+  - scope:
+      path: ""
+      type: "projects"
+    values:
+      layout: "project"
+  - scope:
+      path: ""
+      type: "labs"
+    values:
+      layout: "lab"
+markdown: kramdown
+theme: minima

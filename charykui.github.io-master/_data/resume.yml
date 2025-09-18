@@ -1,0 +1,11 @@
+education:
+  - item: "BSc Information Technology – Multimedia University of Kenya"
+work:
+  - role: "Mosse Cybersecurity Institute (Remote Internship)"
+    details: "- Performed network vulnerability scans using OpenVAS
+- Executed XSS testing and other labs"
+  - role: "Hanmak Technologies (IT Support Intern)"
+    details: "- Diagnosed ERP issues and assisted system upgrades"
+skills:
+  - category: "Languages"
+    items: ["Python","PHP","JavaScript"]
