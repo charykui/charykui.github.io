@@ -1,32 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Resume</title><link rel="stylesheet" href="assets/css/style.css"></head>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resume - Charity Chepkirui</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
 <body>
-<header><nav>
-<a href="index.html">Home</a> | <a href="resume.html">Resume</a> | <a href="projects.html">Projects</a> | 
-<a href="blog.html">Blog</a> | <a href="certificates.html">Certificates</a> | <a href="contact.html">Contact</a>
-</nav></header>
-<main>
-<h2>Resume</h2>
-<section>
-<h3>Work Experience</h3>
-<ul>
-<li><b>Cybersecurity Intern</b> - Sample Org (2023) - Assisted in incident response and vulnerability scanning.</li>
-<li><b>IT Support</b> - University Lab (2022) - Provided helpdesk support for students and staff.</li>
-</ul>
-</section>
-<section>
-<h3>Education</h3>
-<ul>
-<li>B.Sc. Computer Science - Sample University (2019-2023)</li>
-</ul>
-</section>
-<section>
-<h3>Skills</h3>
-<p>Azure, Microsoft Entra ID, SOC Operations, Python, HTML/CSS/JS</p>
-</section>
-<a href="assets/docs/sample-cv.pdf" download>Download CV</a>
-</main>
+  <!-- Navbar -->
+  <nav>
+    <div class="logo"><img src="assets/images/logo.png" alt="Logo" class="logo-img">
+</div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="resume.html">Resume</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="certificates.html">Certificates</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main class="resume-page">
+    <div class="resume-wrapper">
+      <h2>My Resume</h2>
+      <p class="resume-intro">Here’s a quick summary of my professional journey, skills, and achievements.</p>
+
+      <!-- Experience -->
+      <section class="resume-section">
+        <h3>Experience</h3>
+        <div class="resume-item">
+          <h4>Cybersecurity Intern</h4>
+          <span class="resume-meta">TechCorp Ltd • Jun 2024 – Sep 2024</span>
+          <p>Worked on phishing detection, created incident reports, and supported SOC operations with Microsoft Sentinel.</p>
+        </div>
+        <div class="resume-item">
+          <h4>IT Support Assistant</h4>
+          <span class="resume-meta">University Helpdesk • Jan 2023 – May 2023</span>
+          <p>Provided end-user support, resolved hardware/software issues, and documented troubleshooting guides.</p>
+        </div>
+      </section>
+
+      <!-- Education -->
+      <section class="resume-section">
+        <h3>Education</h3>
+        <div class="resume-item">
+          <h4>BSc in Information Technology</h4>
+          <span class="resume-meta">XYZ University • 2019 – 2023</span>
+        </div>
+        <div class="resume-item">
+          <h4>Certifications</h4>
+          <p>Microsoft Certified: Azure Administrator (AZ-104), CompTIA Security+ (In Progress)</p>
+        </div>
+      </section>
+
+      <!-- Skills -->
+      <section class="resume-section">
+        <h3>Skills</h3>
+        <ul class="skills-list">
+          <li>Azure Administration & Entra ID</li>
+          <li>Incident Response & SOC Operations</li>
+          <li>Web Security & Vulnerability Management</li>
+          <li>Linux & Windows Server Management</li>
+          <li>Frontend Development (HTML, CSS, Tailwind)</li>
+        </ul>
+      </section>
+
+      <!-- Download -->
+      <div class="resume-download">
+        <a href="assets/Charity_Chepkirui_Resume.pdf" class="btn" target="_blank">Download Full Resume</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>© 2025 Charity Chepkirui | Built with ❤️</p>
+  </footer>
 </body>
 </html>

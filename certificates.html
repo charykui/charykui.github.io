@@ -1,16 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Certificates</title><link rel="stylesheet" href="assets/css/style.css"></head>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Certifications - Charity Chepkirui</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
 <body>
-<header><nav>
-<a href="index.html">Home</a> | <a href="resume.html">Resume</a> | <a href="projects.html">Projects</a> | 
-<a href="blog.html">Blog</a> | <a href="certificates.html">Certificates</a> | <a href="contact.html">Contact</a>
-</nav></header>
-<main>
-<h2>Certificates</h2>
-<div id="cert-list"></div>
-<script src="assets/js/certs.js"></script>
-</main>
+  <!-- Navbar -->
+  <nav>
+    <div class="logo"><img src="assets/images/logo.png" alt="Logo" class="logo-img"></div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="resume.html">Resume</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="certificates.html">Certificates</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main class="certs-page">
+    <div class="certs-wrapper">
+      <h2>Certifications</h2>
+      <p class="certs-intro">Here are some of my certifications. Click to view or verify.</p>
+
+      <div class="certs-grid">
+        <!-- Sample Certificate Card -->
+        <div class="cert-card">
+          <h4>Microsoft Certified: Azure Administrator (AZ-104)</h4>
+          <span class="cert-meta">Issued: Jan 2025</span>
+          <a href="certs/az104.pdf" target="_blank" class="btn">View Certificate</a>
+        </div>
+
+        <div class="cert-card">
+          <h4>CompTIA Security+ (SY0-601)</h4>
+          <span class="cert-meta">Issued: In Progress</span>
+          <a href="#" class="btn disabled">Pending</a>
+        </div>
+
+        <div class="cert-card">
+          <h4>Mosse Cybersecurity Institute Projects</h4>
+          <span class="cert-meta">Issued: Seasonal</span>
+          <a href="certs/mosse.pdf" target="_blank" class="btn">View Certificate</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>© 2025 Charity Chepkirui</p>
+  </footer>
 </body>
 </html>

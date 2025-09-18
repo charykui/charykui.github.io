@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project Details</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <style>
+    .detail-container {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 12px;
+      background: #fff;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    }
+    h1 {
+      color: #007BFF;
+      margin-bottom: 15px;
+    }
+    h2 {
+      margin-top: 20px;
+      margin-bottom: 10px;
+      color: #333;
+    }
+    p {
+      margin-bottom: 10px;
+      line-height: 1.5;
+    }
+    .screenshot {
+      margin-top: 15px;
+      border-radius: 8px;
+      max-width: 100%;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .back-link {
+      display: inline-block;
+      margin-top: 20px;
+      color: #007BFF;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 40px;
+      background: #fff;
+      box-shadow: 0px 2px 6px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    nav .logo {
+      font-weight: bold;
+      font-size: 1.3rem;
+      color: #007bff;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      margin: 0;
+      padding: 0;
+    }
+    nav ul li a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+    nav ul li a:hover {
+      color: #007bff;
+    }
+    .logo-img {
+      height: 40px;
+    }
+
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav>
+    <div class="logo"><img src="assets/images/logo.png" alt="Logo" class="logo-img"></div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="resume.html">Resume</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="certificates.html">Certificates</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+  <main>
+    <div class="detail-container">
+      <h1 id="title">Loading...</h1>
+      <h2>Objective</h2>
+      <p id="objective"></p>
+      <h2>Steps</h2>
+      <p id="steps"></p>
+      <h2>Result</h2>
+      <p id="result"></p>
+      <h2>Screenshot</h2>
+      <img id="screenshot" class="screenshot" src="" alt="Screenshot">
+      <br>
+      <a href="projects.html" class="back-link">← Back to Projects</a>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Your Name | Cybersecurity Portfolio</p>
+  </footer>
+
+  <script>
+    // Project data (you can expand this)
+    const projectData = {
+      "azure-deployment": {
+        title: "Azure Resource Deployment",
+        objective: "Learn Infrastructure as Code using ARM templates and Bicep.",
+        steps: "1. Create ARM template.\n2. Deploy via Azure CLI.\n3. Validate resources.",
+        result: "Successful deployment of VM, storage, and networking resources.",
+        screenshot: "images/azure-deployment.png"
+      },
+      "cloud-backup": {
+        title: "Cloud Backup & Recovery",
+        objective: "Configure Azure Backup for VMs and restore test scenarios.",
+        steps: "1. Enable backup on VM.\n2. Perform restore test.\n3. Verify integrity.",
+        result: "VM successfully restored from backup point.",
+        screenshot: "images/cloud-backup.png"
+      },
+      "splunk": {
+        title: "Splunk Log Analysis",
+        objective: "Detect anomalies in system logs and create dashboards.",
+        steps: "1. Collect logs.\n2. Write SPL queries.\n3. Build dashboards.",
+        result: "Suspicious logins detected and visualized in dashboard.",
+        screenshot: "images/splunk.png"
+      },
+      "sentinel": {
+        title: "Microsoft Sentinel Lab",
+        objective: "Connect data sources and create detection rules for brute-force attacks.",
+        steps: "1. Connect log source.\n2. Create analytic rules.\n3. Generate alerts.",
+        result: "Alerts triggered for simulated brute-force attempts.",
+        screenshot: "images/sentinel.png"
+      },
+      "web-pentest": {
+        title: "Web Application Pentest",
+        objective: "Perform OWASP Top 10 vulnerability assessment using Burp Suite.",
+        steps: "1. Scan app.\n2. Exploit injection flaws.\n3. Document findings.",
+        result: "SQLi and XSS successfully identified.",
+        screenshot: "images/web-pentest.png"
+      },
+      "metasploitable": {
+        title: "Metasploitable VM Exploitation",
+        objective: "Practice privilege escalation and vulnerability exploitation in lab setup.",
+        steps: "1. Scan VM.\n2. Exploit vulnerabilities.\n3. Gain root access.",
+        result: "Root privileges obtained via exploitation.",
+        screenshot: "images/metasploitable.png"
+      }
+    };
+
+    // Get project ID from URL
+    const params = new URLSearchParams(window.location.search);
+    const projectId = params.get("id");
+
+    if (projectId && projectData[projectId]) {
+      const data = projectData[projectId];
+      document.getElementById("title").innerText = data.title;
+      document.getElementById("objective").innerText = data.objective;
+      document.getElementById("steps").innerText = data.steps;
+      document.getElementById("result").innerText = data.result;
+      document.getElementById("screenshot").src = data.screenshot;
+    } else {
+      document.querySelector(".detail-container").innerHTML = "<h1>Project not found</h1>";
+    }
+  </script>
+</body>
+</html>
