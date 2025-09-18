@@ -1,29 +1,23 @@
-# Portfolio - Charity Chepkirui (Polished)
+# Portfolio Website
 
-This portfolio is a polished, ready-to-deploy static site.
+This is a personal portfolio website for Charity Chepkirui.
 
-## How to edit
+## Structure
+- index.html: Home page
+- resume.html: Resume with timeline
+- projects.html: Projects showcase
+- blog.html: Blog (markdown-based)
+- certificates.html: Certificates
+- contact.html: Contact info
 
-### Blog posts
-- Add `.md` files to `posts/` and update `posts/posts.json` with `title`, `date`, and `file`.
-- Example entry in `posts/posts.json`:
-```
-{ "title": "My Post", "date": "2025-09-10", "file": "my-post.md" }
-```
+## Blog System
+- Add markdown files in `posts/`
+- Update `posts/posts.json` with `title`, `excerpt`, and `file`
 
-### Certificates
-- Drop certificate files into `certs/`.
-- Edit `certs/certs.json` to add metadata:
-```
-[
-  {"title":"Cert Name","file":"file.pdf","verify":"https://link-to-verify"}
-]
-```
+## Certificates
+- Add PDF/image files in `certs/`
+- Update `certs/certs.json` with `name`, `issuer`, and `file`
 
-### Resume
-- Replace `docs/resume.pdf` with your CV (same filename).
-
-### Deployment
-- Upload the contents of this folder to GitHub and enable GitHub Pages, or connect the repo to Netlify/Vercel for CI deploys.
-
-Enjoy!
+## Deployment
+- Push to GitHub
+- Enable GitHub Pages (Settings → Pages → Branch: `main` → Folder: `/ (root)`)

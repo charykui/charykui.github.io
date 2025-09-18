@@ -1,17 +1,4 @@
 [
-  {
-    "title": "Microsoft Certified: Azure Fundamentals",
-    "file": "Microsoft_Azure_Fundamentals.pdf",
-    "verify": "https://www.credly.com/badges/example-azure"
-  },
-  {
-    "title": "CompTIA Security+",
-    "file": "CompTIA_SecurityPlus.jpg",
-    "verify": "https://www.comptia.org/certifications/verify"
-  },
-  {
-    "title": "Google Cybersecurity Professional Certificate",
-    "file": "Google_Cybersecurity.pdf",
-    "verify": "https://www.credly.com/badges/example-google"
-  }
+  {"name": "Azure Fundamentals", "issuer": "Microsoft", "file": "azure-fundamentals.pdf"},
+  {"name": "Cybersecurity Basics", "issuer": "Coursera", "file": "cybersecurity-basics.pdf"}
 ]

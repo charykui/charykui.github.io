@@ -1,17 +1,4 @@
 [
-  {
-    "title": "Learning Azure Backup",
-    "date": "2025-08-20",
-    "file": "azure-backup.md"
-  },
-  {
-    "title": "My First SOC Lab",
-    "date": "2025-09-01",
-    "file": "soc-lab.md"
-  },
-  {
-    "title": "Splunk Queries for Login Anomalies",
-    "date": "2025-09-05",
-    "file": "splunk-queries.md"
-  }
+  {"title": "My First Blog Post", "excerpt": "This is a sample blog post.", "file": "sample-post.md"},
+  {"title": "Learning Azure", "excerpt": "Notes from my Azure labs.", "file": "azure-post.md"}
 ]
