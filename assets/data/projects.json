@@ -1,0 +1,72 @@
+{
+  "Cloud": {
+    "azure-deployment": {
+      "title": "Azure Resource Deployment",
+      "description": "Infrastructure as Code project deploying Azure resources.",
+      "objective": "Automate Azure deployments using ARM templates & Bicep.",
+      "steps": [
+        "Created ARM templates for VM and storage setup.",
+        "Parameterized deployment for reusability.",
+        "Validated deployment with Azure CLI."
+      ],
+      "results": "Successfully deployed a scalable VM + storage setup in Azure.",
+      "screenshots": [
+        "assets/projects/azure-ad-setup.png",
+        "assets/projects/azure-ad-dashboard.png"
+      ],
+      "video": "https://www.youtube.com/embed/your-video-id"
+    },
+    "cloud-backup": {
+      "title": "Cloud Backup & Recovery",
+      "description": "Configured Azure Backup and tested VM restore.",
+      "objective": "Ensure disaster recovery with Azure Backup.",
+      "steps": [
+        "Configured Azure Backup vault.",
+        "Backed up Windows VM.",
+        "Tested restore to verify process."
+      ],
+      "results": "VM restore completed successfully within RTO/RPO limits.",
+      "screenshots": [
+        "assets/projects/cloud-backup.png",
+        "assets/projects/cloud-restore.png"
+      ],
+      "video": "https://www.youtube.com/embed/your-video-id"
+    }
+  },
+  "SIEM": {
+    "splunk": {
+      "title": "Splunk Log Analysis",
+      "description": "Detected anomalies in system logs with dashboards.",
+      "objective": "Practice log analysis with SIEM tools.",
+      "steps": [
+        "Installed Splunk server.",
+        "Configured log ingestion.",
+        "Created dashboards for monitoring."
+      ],
+      "results": "Detected suspicious login attempts from attacker IP.",
+      "screenshots": [
+        "assets/labs/siem-log.png",
+        "assets/labs/siem-dashboard.png"
+      ],
+      "video": "https://www.youtube.com/embed/your-video-id"
+    }
+  },
+  "Pentest": {
+    "web-pentest": {
+      "title": "Web Application Pentest",
+      "description": "OWASP Top 10 assessment using Burp Suite.",
+      "objective": "Identify and exploit web vulnerabilities in a test app.",
+      "steps": [
+        "Mapped web application structure.",
+        "Exploited SQL Injection & XSS.",
+        "Reported vulnerabilities with remediation steps."
+      ],
+      "results": "Multiple OWASP Top 10 issues identified and patched.",
+      "screenshots": [
+        "assets/labs/web-pentest-1.png",
+        "assets/labs/web-pentest-2.png"
+      ],
+      "video": "https://www.youtube.com/embed/9hwCNxYagy0"
+    }
+  }
+}
