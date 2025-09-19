@@ -5,15 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Resume - Charity Chepkirui</title>
   <link rel="stylesheet" href="assets/css/style.css">
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
   <!-- Navbar -->
   <nav>
-    <div class="logo"><img src="assets/images/logo.png" alt="Logo" class="logo-img">
-</div>
+    <div class="logo"><img src="assets/images/logo.png" alt="Logo" class="logo-img"></div>
     <ul>
       <li><a href="index.html">Home</a></li>
-      <li><a href="resume.html">Resume</a></li>
+      <li><a href="resume.html" class="active">Resume</a></li>
       <li><a href="projects.html">Projects</a></li>
       <li><a href="blog.html">Blog</a></li>
       <li><a href="certificates.html">Certificates</a></li>
@@ -22,59 +23,130 @@
   </nav>
 
   <main class="resume-page">
-    <div class="resume-wrapper">
-      <h2>My Resume</h2>
-      <p class="resume-intro">Here’s a quick summary of my professional journey, skills, and achievements.</p>
 
-      <!-- Experience -->
-      <section class="resume-section">
-        <h3>Experience</h3>
-        <div class="resume-item">
-          <h4>Cybersecurity Intern</h4>
-          <span class="resume-meta">TechCorp Ltd • Jun 2024 – Sep 2024</span>
-          <p>Worked on phishing detection, created incident reports, and supported SOC operations with Microsoft Sentinel.</p>
-        </div>
-        <div class="resume-item">
-          <h4>IT Support Assistant</h4>
-          <span class="resume-meta">University Helpdesk • Jan 2023 – May 2023</span>
-          <p>Provided end-user support, resolved hardware/software issues, and documented troubleshooting guides.</p>
-        </div>
-      </section>
+    <!-- About Me -->
+<section class="resume-card about-me">
+  <h2><i class="fas fa-user"></i> About Me</h2>
+  <p>
+    Hi, I'm <strong>Charity Chepkirui</strong>, an aspiring cybersecurity professional and developer. 
+    While I may not yet have years of formal work experience, I am actively building my expertise 
+    through hands-on <strong>projects</strong>, <strong>labs</strong>, and continuous learning.
+  </p>
+  <p>
+    My approach is to demonstrate skills through action — deploying cloud infrastructure, practicing 
+    incident response, analyzing security logs, and completing real-world labs. This portfolio 
+    reflects both my learning journey and my ability to adapt quickly to new technologies.
+  </p>
+  <p>
+    I believe curiosity, persistence, and practical problem-solving are as important as years of 
+    experience. My projects and certifications are proof of how I am bridging the gap between 
+    learning and professional readiness.
+  </p>
+  
 
-      <!-- Education -->
-      <section class="resume-section">
-        <h3>Education</h3>
-        <div class="resume-item">
-          <h4>BSc in Information Technology</h4>
-          <span class="resume-meta">XYZ University • 2019 – 2023</span>
-        </div>
-        <div class="resume-item">
-          <h4>Certifications</h4>
-          <p>Microsoft Certified: Azure Administrator (AZ-104), CompTIA Security+ (In Progress)</p>
-        </div>
-      </section>
+  <!-- Scroll Down Indicator -->
+  <div class="scroll-down">
+    <i class="fas fa-angle-down"></i>
+    <span><b><i>Scroll for more</i></b></span>
+  </div>
+  <div class="cv-button">
+    <a href="assets/docs/sample-cv.pdf" class="btn-cv" download>Download CV</a>
+  </div>
+</section>
 
-      <!-- Skills -->
-      <section class="resume-section">
-        <h3>Skills</h3>
-        <ul class="skills-list">
-          <li>Azure Administration & Entra ID</li>
-          <li>Incident Response & SOC Operations</li>
-          <li>Web Security & Vulnerability Management</li>
-          <li>Linux & Windows Server Management</li>
-          <li>Frontend Development (HTML, CSS, Tailwind)</li>
-        </ul>
-      </section>
 
-      <!-- Download -->
-      <div class="resume-download">
-        <a href="assets/Charity_Chepkirui_Resume.pdf" class="btn" target="_blank">Download Full Resume</a>
+    <!-- Skills -->
+    <section class="resume-card skills">
+      <h2><i class="fas fa-tools"></i> Skills</h2>
+
+      <!-- Search bar -->
+      <input type="text" id="skillSearch" placeholder="Search skills..." class="skill-search" />
+
+      <!-- Category tabs -->
+      <div class="skill-categories">
+        <button class="tab-btn active" data-category="all">All</button>
+        <button class="tab-btn" data-category="security">Security</button>
+        <button class="tab-btn" data-category="development">Software Development</button>
+        <button class="tab-btn" data-category="communication">Communication</button>
       </div>
-    </div>
+
+      <!-- Skills list -->
+      <div class="skills-grid" id="skillsList">
+        <div class="skill-card" data-category="security">Network Security</div>
+        <div class="skill-card" data-category="security">Incident Response</div>
+        <div class="skill-card" data-category="development">JavaScript</div>
+        <div class="skill-card" data-category="development">Python</div>
+        <div class="skill-card" data-category="communication">Technical Writing</div>
+        <div class="skill-card" data-category="communication">Collaboration</div>
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section class="resume-card">
+      <h2><i class="fas fa-briefcase"></i> Experience</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <h3>Cybersecurity Intern (Self-directed Labs)</h3>
+          <p><em>Seasonal</em></p>
+          <p>Working through security labs (Azure, SIEM, penetration testing) to simulate professional 
+          environments and strengthen technical expertise.</p>
+        </div>
+        <div class="timeline-item">
+          <h3>Intern – Hanmak Technologies</h3>
+          <p><em>Jan 2022 - April 2022</em></p>
+          <p>Assisted in daily operations, contributed to [task/project], and built foundational workplace skills.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section class="resume-card">
+      <h2><i class="fas fa-graduation-cap"></i> Education</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <h3>Bachelor’s Degree in [Your Field]</h3>
+          <p><em>[University Name], [Years]</em></p>
+          <p>Relevant coursework: Networking, Security, Cloud Computing, Programming.</p>
+        </div>
+      </div>
+    </section>
   </main>
 
-  <footer class="footer">
-    <p>© 2025 Charity Chepkirui | Built with ❤️</p>
+  <footer>
+    <p>&copy; 2025 Charity Chepkirui | Cybersecurity Portfolio</p>
   </footer>
+
+  <!-- Skills filtering script -->
+  <script>
+    const searchInput = document.getElementById("skillSearch");
+    const skillsList = document.getElementById("skillsList");
+    const skillCards = skillsList.getElementsByClassName("skill-card");
+    const tabBtns = document.querySelectorAll(".tab-btn");
+
+    // Search filter
+    searchInput.addEventListener("input", () => {
+      const filter = searchInput.value.toLowerCase();
+      for (let card of skillCards) {
+        card.style.display = card.textContent.toLowerCase().includes(filter) ? "" : "none";
+      }
+    });
+
+    // Category filter
+    tabBtns.forEach(btn => {
+      btn.addEventListener("click", () => {
+        document.querySelector(".tab-btn.active").classList.remove("active");
+        btn.classList.add("active");
+        const category = btn.dataset.category;
+
+        for (let card of skillCards) {
+          if (category === "all" || card.dataset.category === category) {
+            card.style.display = "";
+          } else {
+            card.style.display = "none";
+          }
+        }
+      });
+    });
+  </script>
 </body>
 </html>

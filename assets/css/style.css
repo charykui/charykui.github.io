@@ -56,27 +56,72 @@ nav ul li a.active {
 }
 
 /* -------- Hero Section (Home) -------- */
+
 .hero {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	gap: 2rem;
-	padding: 3rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 80px); /* full height minus navbar */
+  padding: 2rem 1rem;
+  margin-top: 0;
+  margin-bottom: 2rem;
+
+  /* Soft background gradient */
+  background: linear-gradient(135deg, #f9fcff, #eef6ff);
 }
 
-.hero-left .profile-photo {
-	width: 220px;
-	border-radius: 50%;
-	border: 4px solid #007BFF;
+
+.hero-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  max-width: 1100px;
+  width: 100%;
+}
+
+
+.hero-left {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-right {
+  flex: 2;
+  text-align: left;
 }
 
 .hero-right h1 {
-	font-size: 2rem;
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
 }
 
-.hero-right .highlight {
-	color: #007BFF;
+.hero-right p {
+  font-size: 1.2rem;
+  max-width: 600px;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
 }
+.profile-photo {
+  width: 280px;
+  aspect-ratio: 1 / 1;     /* keeps it perfectly round */
+  border-radius: 50%;      /* makes it circular */
+  object-fit: cover;       /* avoids distortion */
+  border: 5px solid #007BFF; /* blue border */
+  box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-photo:hover {
+  transform: scale(1.05); /* subtle zoom */
+  box-shadow: 0 10px 24px rgba(0,0,0,0.25);
+}
+.highlight {
+  color: #007BFF; /* accent blue */
+}
+
+
 
 .circle-nav {
 	display: flex;
@@ -110,6 +155,43 @@ nav ul li a.active {
 	text-decoration: none;
 	font-weight: 500;
 }
+/* Fade-in animation */
+@keyframes fadeInUp {
+	0% {
+		opacity: 0;
+		transform: translateY(20px);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+.hero-right h1,
+.hero-right p,
+.circle-nav,
+.btn-cv {
+	opacity: 0; /* start hidden */
+	animation: fadeInUp 0.8s ease forwards;
+}
+
+/* Stagger timing for nice sequence */
+.hero-right h1 {
+	animation-delay: 0.2s;
+}
+
+.hero-right p {
+	animation-delay: 0.4s;
+}
+
+.circle-nav {
+	animation-delay: 0.6s;
+}
+
+.btn-cv {
+	animation-delay: 0.8s;
+}
+
 
 /* -------- Page Titles -------- */
 .page-title {
@@ -414,3 +496,212 @@ footer {
 .lightbox .next:hover {
   color: #007BFF; /* match accent color */
 }
+.resume-page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.resume-page h1, 
+.resume-page h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.about-me {
+  margin-bottom: 2.5rem;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.resume-page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.resume-page h1, 
+.resume-page h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.about-me {
+  margin-bottom: 2.5rem;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* Timeline format */
+.timeline {
+  border-left: 3px solid #007BFF;
+  padding-left: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.timeline-item {
+  margin-bottom: 1.5rem;
+}
+
+.timeline-item h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #007BFF;
+}
+
+.timeline-item p {
+  margin: 0.3rem 0;
+}
+
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  list-style: none;
+  padding: 0;
+}
+
+.skills-list li {
+  background: #f5f9ff;
+  border: 1px solid #007BFF;
+  border-radius: 20px;
+  padding: 0.5rem 1rem;
+  font-size: 0.95rem;
+}
+/* Social Links */
+.social-links {
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.social-links a {
+  padding: 0.5rem 1rem;
+  border: 1px solid #007BFF;
+  border-radius: 20px;
+  text-decoration: none;
+  color: #007BFF;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+  background: #007BFF;
+  color: #fff;
+}
+.tagline {
+  font-size: 1.1rem;
+  color: #666;
+  margin-top: -0.5rem;
+  margin-bottom: 1.5rem;
+  font-style: italic;
+}
+.skills {
+  text-align: center;
+  margin: 3rem auto;
+  max-width: 900px;
+}
+
+.skill-search {
+  width: 60%;
+  padding: 10px;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.skill-categories {
+  margin-bottom: 1.5rem;
+}
+
+.tab-btn {
+  padding: 8px 16px;
+  margin: 0 5px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  background: #f0f0f0;
+  transition: background 0.3s;
+}
+
+.tab-btn.active,
+.tab-btn:hover {
+  background: #007bff;
+  color: white;
+}
+
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+}
+
+.skill-card {
+  padding: 10px 16px;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s;
+}
+
+.skill-card:hover {
+  transform: translateY(-3px);
+}
+.btn-cv {
+  display: inline-block;
+  margin: 2rem auto;          /* spacing around it */
+  padding: 12px 28px;
+  background-color: #007bff;
+  color: white;
+  font-weight: bold;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+  text-align: center;
+}
+
+.btn-cv:hover {
+  background-color: #0056b3;
+}
+
+/* Center in page */
+.resume-page {
+  text-align: center;
+}
+/* Resume Card Wrapper */
+.resume-card {
+  background: #ffffff;               /* clean white card */
+  border-radius: 12px;               /* rounded corners */
+  padding: 2rem;
+  margin: 2rem auto;
+  max-width: 900px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08); /* soft shadow */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Hover effect for interactivity */
+.resume-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+}
+
+/* Section headers inside cards */
+.resume-card h2 {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: #007bff;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 0.5rem;
+}
+
+.resume-card h2 i {
+  margin-right: 8px;
+  color: #0056b3;
+}
+
+

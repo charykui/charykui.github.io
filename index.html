@@ -6,6 +6,16 @@
   <title>My Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style type="text/css">
+    /* Prevent scroll on landing page */
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden; /* disables scrolling */
+    }
+  </style>
 </head>
 <body>
   <!-- Navbar -->
@@ -26,22 +36,27 @@
       <img src="assets/images/profile.png" alt="Profile Photo" class="profile-photo" />
     </div>
     <div class="hero-right">
-      <h1>Hi, I'm <span class="highlight">Charity Chepkirui</span> </h1>
+      <h1>Hi, I'm <span class="highlight">Charity Chepkirui</span></h1>
+      <p class="tagline">Cybersecurity Enthusiast • Problem Solver • Lifelong Learner</p>
+
       <p class="about-text">
         I’m an aspiring <strong>Cybersecurity / Developer / Analyst</strong> passionate about
         building secure systems, solving problems, and sharing knowledge. This is my space
         where I showcase my work, skills, and certifications.
       </p>
 
-      <!-- Circular Nav Buttons -->
-      <div class="circle-nav">
-        <a href="resume.html" class="circle-btn">Resume</a>
-        <a href="projects.html" class="circle-btn">Projects</a>
-        <a href="certs.html" class="circle-btn">Certs</a>
-      </div>
+      
 
       <!-- Download CV -->
       <a href="assets/docs/sample-cv.pdf" class="btn-cv" download>Download CV</a>
+      <!-- Social Links -->
+      <div class="social-links">
+        <a href="https://linkedin.com/in/your-profile" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/your-username" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://www.mosse-institute.com/your-portfolio" target="_blank"><i class="fas fa-shield-alt"></i></a>
+      </div>
+
+
     </div>
   </header>
 </body>
