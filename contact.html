@@ -3,29 +3,97 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <title>Contact - Charity Chepkirui</title>
   <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
   <!-- Navbar -->
   <nav>
-    <div class="logo">My Portfolio</div>
+    <div class="logo"><img src="assets/images/logo.png" alt="Logo" class="logo-img"></div>
     <ul>
       <li><a href="index.html">Home</a></li>
       <li><a href="resume.html">Resume</a></li>
       <li><a href="projects.html">Projects</a></li>
       <li><a href="blog.html">Blog</a></li>
-      <li><a href="certificates.html">Certificates</a></li>
-      <li><a href="contact.html">Contact</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
     </ul>
   </nav>
 
-  <main class="page-container">
-    <h1>Contact Me</h1>
-    <p>Email: <a href="mailto:yourname@example.com">yourname@example.com</a></p>
-    <p>LinkedIn: <a href="https://linkedin.com/in/yourname" target="_blank">linkedin.com/in/yourname</a></p>
-    <p>GitHub: <a href="https://github.com/yourusername" target="_blank">github.com/yourusername</a></p>
+  <main class="page-container contact-page">
+  	<div class="contact-wrapper">
+  		<h1>Contact Me</h1>
+  		<p>If you’d like to collaborate, discuss opportunities or just say hi, use the form below or connect with me on social media.</p>
+
+  		<!-- Contact Form -->
+  		<form id="contactForm" action="https://formspree.io/f/mjkenlzj" method="POST" class="contact-form">
+  			<input type="text" name="name" placeholder="Your Name" required>
+  			<input type="email" name="_replyto" placeholder="Your Email" required>
+  			<input type="text" name="subject" placeholder="Subject">
+  			<textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+  			<button type="submit">Send Message</button>
+  			<p id="form-status" class="form-status"></p> <!--  Success/Error message appears here -->
+  		</form>
+
+  		<!-- Social Links -->
+  		<div class="social-links">
+  			<a href="mailto:chepkiruicharity63@gmail.com"><i class="fas fa-envelope"></i></a>
+  			<a href="https://linkedin.com/in/yourprofile" target="_blank"><i class="fab fa-linkedin"></i></a>
+  			<a href="https://github.com/yourprofile" target="_blank"><i class="fab fa-github"></i></a>
+  			<a href="https://mosse-institute.com/portfolio/yourname" target="_blank"><i class="fas fa-shield-alt"></i></a>
+  		</div>
+  	</div>
   </main>
+
+
+  <footer>
+    <p>&copy; 2025 Charity Chepkirui | Cybersecurity Portfolio</p>
+  </footer>
+  <div id="popup-message" class="popup-message"></div>
+  <script>
+  	const form = document.getElementById("contactForm");
+  	const popup = document.getElementById("popup-message");
+
+  	form.addEventListener("submit", async function(e) {
+  		e.preventDefault();
+  		const data = new FormData(form);
+
+  		try {
+  			const response = await fetch(form.action, {
+  				method: form.method,
+  				body: data,
+  				headers: { 'Accept': 'application/json' }
+  			});
+
+  			if (response.ok) {
+  				showPopup("✅ Thank you! I will be sure to check your message and respond promptly", false);
+  				form.reset();
+  			} else {
+  				showPopup("❌ Oops! Something went wrong. Please try again.", true);
+  			}
+  		} catch (error) {
+  			showPopup("❌ Network error. Please check your connection.", true);
+  		}
+  	});
+
+  	function showPopup(message, isError) {
+  		popup.textContent = message;
+  		popup.className = "popup-message" + (isError ? " error" : "");
+  		popup.style.display = "block";
+  		setTimeout(() => {
+      popup.style.opacity = "1"; // fade in
+  }, 50);
+
+    // Hide after 4 seconds
+  		setTimeout(() => {
+      popup.style.opacity = "0"; // fade out
+      setTimeout(() => {
+      	popup.style.display = "none";
+      }, 500);
+  }, 4000);
+  	}
+  </script>
+
+
 </body>
 </html>
