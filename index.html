@@ -55,11 +55,68 @@
         <a href="https://mosse-institute.com/portfolio/yourprofile" target="_blank"><i class="fas fa-shield-alt"></i></a>
       </div>
 
-      <!-- Download CV -->
-      <a href="assets/docs/sample-cv.pdf" class="btn-cv" download>Download CV</a>
+      <!-- CV Request Button -->
+  <button onclick="openCVRequest()" class="btn-cv">Request Resume</button>
 
 
     </div>
   </header>
+  <!-- Popup CV Request Form -->
+  <div id="cvPopup" class="popup-overlay">
+    <div class="popup-box">
+      <h2>Request My Resume</h2>
+      <form action="https://formspree.io/f/xyzdrvwo" method="POST" id="cvRequestForm">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="_replyto" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Why do you need my CV? (optional)"></textarea>
+        <button type="submit">Submit Request</button>
+        <p id="cv-status" class="form-status"></p>
+      </form>
+      <button class="close-btn" onclick="closeCVRequest()">Close</button>
+    </div>
+  </div>
+
+  <!-- CV Request popup -->
+<script>
+  const cvPopup = document.getElementById("cvPopup");
+  const cvForm = document.getElementById("cvRequestForm");
+  const cvStatus = document.getElementById("cv-status");
+
+  function openCVRequest() {
+    cvPopup.style.display = "flex";
+  }
+
+  function closeCVRequest() {
+    cvPopup.style.display = "none";
+  }
+
+  cvForm.addEventListener("submit", async function(e) {
+    e.preventDefault();
+    const data = new FormData(cvForm);
+
+    try {
+      const response = await fetch(cvForm.action, {
+        method: cvForm.method,
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (response.ok) {
+        cvStatus.textContent = "✅ Thank you! I’ll send you my CV promptly.";
+        cvStatus.className = "form-status success";
+        cvStatus.style.display = "block";
+        cvForm.reset();
+      } else {
+        cvStatus.textContent = "❌ Error. Please try again later.";
+        cvStatus.className = "form-status error";
+        cvStatus.style.display = "block";
+      }
+    } catch (error) {
+      cvStatus.textContent = "❌ Network error.";
+      cvStatus.className = "form-status error";
+      cvStatus.style.display = "block";
+    }
+  });
+</script>
 </body>
 </html>
