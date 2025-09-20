@@ -42,15 +42,13 @@
     experience. My projects and certifications are proof of how I am bridging the gap between 
     learning and professional readiness.
   </p>
-  
-
-  <!-- Scroll Down Indicator -->
-  <div class="scroll-down">
-    <i class="fas fa-angle-down"></i>
-    <span><b><i>Scroll for more</i></b></span>
-  </div>
   <div class="cv-button">
     <a href="assets/docs/sample-cv.pdf" class="btn-cv" download>Download CV</a>
+  </div>
+  <!-- Scroll Down Indicator -->
+  <div class="scroll-down" onclick="document.querySelector('.skills').scrollIntoView({behavior: 'smooth'})">
+  	<i class="fas fa-angle-down"></i>
+  	<span><b>Scroll for more</b></span>
   </div>
 </section>
 
@@ -76,40 +74,97 @@
         <div class="skill-card" data-category="security">Incident Response</div>
         <div class="skill-card" data-category="development">JavaScript</div>
         <div class="skill-card" data-category="development">Python</div>
+        <div class="skill-card" data-category="development">HTML</div>
+        <div class="skill-card" data-category="development">CSS</div>
         <div class="skill-card" data-category="communication">Technical Writing</div>
         <div class="skill-card" data-category="communication">Collaboration</div>
       </div>
     </section>
 
     <!-- Experience -->
-    <section class="resume-card">
-      <h2><i class="fas fa-briefcase"></i> Experience</h2>
-      <div class="timeline">
-        <div class="timeline-item">
-          <h3>Cybersecurity Intern (Self-directed Labs)</h3>
-          <p><em>Seasonal</em></p>
-          <p>Working through security labs (Azure, SIEM, penetration testing) to simulate professional 
-          environments and strengthen technical expertise.</p>
-        </div>
-        <div class="timeline-item">
-          <h3>Intern – Hanmak Technologies</h3>
-          <p><em>Jan 2022 - April 2022</em></p>
-          <p>Assisted in daily operations, contributed to [task/project], and built foundational workplace skills.</p>
-        </div>
-      </div>
+    <section class="resume-card experience">
+    	<h2><i class="fas fa-briefcase"></i> Experience</h2>
+
+    	<div class="experience-item">
+    		<h3>Cybersecurity Intern (Self-directed Labs)</h3>
+    		<p class="experience-meta"><em>Seasonal / Remote </em> | Mosse Cybersecurity Instuitute - Australia</p>
+    		<p>
+    			Gaining practical cybersecurity skills by simulating real-world environments through structured labs and projects.
+    		</p>
+    		<ul class="responsibilities">
+    			<li>Built and configured virtual labs for cloud security and penetration testing.</li>
+    			<li>Investigated simulated phishing incidents and documented response steps.</li>
+    			<li>Deployed Microsoft Sentinel and created detection rules for security monitoring.</li>
+    		</ul>
+    	</div>
+
+    	<div class="experience-item">
+    		<h3>IT Support Intern </h3>
+    		<p class="experience-meta"><em> Jan 2022 - April 2022</em> | Hanmak Technologies - Nairobi, Kenya</p>
+    		<p>
+    			Contributed to IT support and beginner-level security monitoring tasks, gaining exposure to professional environments.
+    		</p>
+    		<ul class="responsibilities">
+    			<li>Assisted in troubleshooting technical issues across systems.</li>
+    			<li>Helped maintain IT inventory and user account setups.</li>
+    			<li>Shadowed senior staff in incident response simulations.</li>
+    		</ul>
+    	</div>
+    	<div class="experience-item">
+    		<h3>Presidential Digital Talent - Information Security </h3>
+    		<p class="experience-meta"><em> April 2018 - Feb 2019</em> | ICT Authority - Nairobi, Kenya</p>
+    		<p>
+    			Contributed to IT support and beginner-level security monitoring tasks, gaining exposure to professional environments.
+    		</p>
+    		<ul class="responsibilities">
+    			<li>Assisted in troubleshooting technical issues across systems.</li>
+    			<li>Helped maintain IT inventory and user account setups.</li>
+    			<li>Shadowed senior staff in incident response simulations.</li>
+    		</ul>
+    	</div>
     </section>
 
-    <!-- Education -->
-    <section class="resume-card">
-      <h2><i class="fas fa-graduation-cap"></i> Education</h2>
-      <div class="timeline">
-        <div class="timeline-item">
-          <h3>Bachelor’s Degree in [Your Field]</h3>
-          <p><em>[University Name], [Years]</em></p>
-          <p>Relevant coursework: Networking, Security, Cloud Computing, Programming.</p>
-        </div>
-      </div>
+    <!-- Certificates -->
+    <section class="resume-card certificates">
+    	<h2><i class="fas fa-certificate"></i> Certificates</h2>
+
+    	<div class="certificate-grid">
+    		<div class="certificate-item">
+    			<h3>Azure Fundamentals (AZ-900)</h3>
+    			<p><em>2024</em></p>
+    			<a href="assets/certs/azure-fundamentals.pdf" target="_blank">View</a>
+    		</div>
+
+    		<div class="certificate-item">
+    			<h3>Splunk Core Certified User</h3>
+    			<p><em>2024</em></p>
+    			<a href="assets/certs/splunk-user.pdf" target="_blank">View</a>
+    		</div>
+
+    		<div class="certificate-item">
+    			<h3>Mosse SOC Analyst Labs</h3>
+    			<p><em>2025</em></p>
+    			<a href="assets/certs/mosse-soc.pdf" target="_blank">View</a>
+    		</div>
+    	</div>
     </section>
+
+
+    <!-- Education -->
+    <section class="resume-card education">
+    	<h2><i class="fas fa-graduation-cap"></i> Education</h2>
+    	<div class="education-item">
+    		<h3>Certificate in Ethical Hacking Essentials </h3>
+    		<p class="education-meta"><em>CyberShujaa</em> | 2024 - 2025</p>
+    		<p>Focused on core IT and cybersecurity concepts with capstone project(s).</p>
+    	</div>
+    	<div class="education-item">
+    		<h3>Bachelor’s Degree in Information Technology</h3>
+    		<p class="education-meta"><em>Multimedia University of Kenya</em> | 2013 - 2017</p>
+    		<p>Focused on core IT and cybersecurity concepts with capstone project(s).</p>
+    	</div>
+    </section>
+
   </main>
 
   <footer>
