@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog Post - Charity Chepkirui</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav>
+    <div class="logo"><img src="assets/images/logo.png" alt="Logo" class="logo-img"></div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="resume.html">Resume</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="blog.html" class="active">Blog</a></li>
+      <li><a href="certificates.html">Certificates</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main class="page-container blog-post-page">
+    <a href="blog.html" class="back-link">← Back to Blog</a>
+    <article id="blogPostContent" class="blog-post-wrapper">
+      <!-- Post will load here -->
+    </article>
+  </main>
+
+
+  <footer>
+    <p>&copy; 2025 Charity Chepkirui | Cybersecurity Portfolio</p>
+  </footer>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const postId = parseInt(params.get("id"));
+
+    fetch("assets/data/blog.json")
+    .then(response => response.json())
+    .then(posts => {
+      const post = posts[postId];
+      if (!post) return;
+
+      const content = document.getElementById("blogPostContent");
+      content.innerHTML = `
+      <h1>${post.title}</h1>
+      <p class="blog-date"><i class="fas fa-calendar-alt"></i> ${post.date}</p>
+      ${post.image ? `<img src="${post.image}" alt="${post.title}" class="blog-post-img">` : ""}
+      <p>${post.excerpt}</p>
+      <p>${post.content || "Full content coming soon..."}</p>
+      <div class="post-navigation">
+      ${postId > 0 ? `<a href="blog-post.html?id=${postId - 1}" class="nav-link">← Previous</a>` : ""}
+      ${postId < posts.length - 1 ? `<a href="blog-post.html?id=${postId + 1}" class="nav-link">Next →</a>` : ""}
+      </div>
+      `;
+    })
+    .catch(error => console.error("Error loading blog post:", error));
+  </script>
+
+</body>
+</html>
