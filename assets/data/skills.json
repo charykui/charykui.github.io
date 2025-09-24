@@ -1,0 +1,32 @@
+{
+  "cybersecurity": [
+    "Network Security",
+    "Incident Response",
+    "SIEM (Microsoft Sentinel, Splunk)",
+    "Vulnerability Management",
+    "Identity & Access Management (IAM)",
+    "Cloud Security (Azure, AWS)",
+    "Threat Analysis & Detection",
+    "Security Monitoring & Logging",
+    "Endpoint Security (Defender, Antivirus)"
+  ],
+  "technical": [
+    "Python (automation, log parsing)",
+    "JavaScript",
+    "HTML & CSS",
+    "PowerShell & Bash",
+    "SQL (querying logs)",
+    "Git & GitHub"
+  ],
+  "tools": [
+    "Git", 
+    "Linux"
+  ],
+  "soft-skills": [
+    "Technical Writing",
+    "Clear Communication",
+    "Problem Solving & Critical Thinking",
+    "Collaboration & Teamwork",
+    "Research & Continuous Learning"
+  ]
+}
