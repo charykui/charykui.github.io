@@ -1,0 +1,8 @@
+{
+    "id": 0,
+    "title": "Azure Labs Experience",
+    "date": "Dec 2024",
+    "excerpt": "Exploring cloud security by deploying resources and simulating security incidents in Azure.",
+    "image": "assets/images/blog/Azure.jpg",
+    "content": "I deployed multiple Azure resources, configured Microsoft Sentinel, and simulated security incidents to practice detection and response."
+  }

@@ -1,29 +1,35 @@
 [
   {
-    "id": 0,
-    "title": "How I Built My Portfolio",
-    "date": "Feb 2025",
-    "excerpt": "A step-by-step explanation of building my personal portfolio using HTML, CSS, and JSON-driven blog posts.",
-    "image": "assets/images/blog/portfolio.jpg",
-    "link": "blog-post.html?id=0",
-    "content": "This is where I explain the whole process of designing, coding, and hosting my portfolio website."
-  },
-  {
-    "id": 1,
-    "title": "Learning Cybersecurity",
-    "date": "Jan 2025",
-    "excerpt": "My journey into SOC operations, incident response, and cloud security.",
-    "image": "assets/images/blog/cybersec.jpg",
-    "link": "blog-post.html?id=1",
-    "content": "I started learning SOC tools like Microsoft Sentinel and Splunk, simulating real incidents..."
+    "id": 3,
+    "title": "Award - Best Female Security Engineer",
+    "date": "Oct 2025",
+    "excerpt": "Honored to Be Recognized as the Best Security Engineer by Cyber Shujaa .",
+    "image": "assets/images/blog/grad.jpeg",
+    "content": "<p>I’m thrilled to share that I was awarded the <strong>Best Security Engineer</strong> title...</p>"
   },
   {
     "id": 2,
+    "title": "How I Built My Portfolio",
+    "date": "Sep 2025",
+    "excerpt": "A step-by-step explanation of building my personal portfolio using HTML, CSS, and JSON-driven blog posts.",
+    "image": "assets/images/blog/portfolio.png",
+    "content": "This is where I explain the whole process of designing, coding, and hosting my portfolio website."
+  },
+  
+  {
+    "id": 1,
+    "title": "Learning Cybersecurity",
+    "date": "Aug 2025",
+    "excerpt": "My journey into SOC operations, incident response, and cloud security.",
+    "image": "assets/images/blog/cybersec.jpg",
+    "content": "I started learning SOC tools like Microsoft Sentinel and Splunk, simulating real incidents..."
+  },
+  {
+    "id": 0,
     "title": "Azure Labs Experience",
-    "date": "Dec 2024",
+    "date": "Aug 2025",
     "excerpt": "Exploring cloud security by deploying resources and simulating security incidents in Azure.",
     "image": "assets/images/blog/Azure.jpg",
-    "link": "blog-post.html?id=2",
     "content": "I deployed multiple Azure resources, configured Microsoft Sentinel, and simulated security incidents to practice detection and response."
   }
 ]

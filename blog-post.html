@@ -16,7 +16,6 @@
       <li><a href="resume.html">Resume</a></li>
       <li><a href="projects.html">Projects</a></li>
       <li><a href="blog.html" class="active">Blog</a></li>
-      <li><a href="certificates.html">Certificates</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
   </nav>
@@ -34,30 +33,26 @@
   </footer>
 
   <script>
-    const params = new URLSearchParams(window.location.search);
-    const postId = parseInt(params.get("id"));
+  const params = new URLSearchParams(window.location.search);
+  const postId = params.get("id");
 
-    fetch("assets/data/blog.json")
+  fetch(`assets/data/posts/${postId}.json`)
     .then(response => response.json())
-    .then(posts => {
-      const post = posts[postId];
-      if (!post) return;
-
+    .then(post => {
       const content = document.getElementById("blogPostContent");
       content.innerHTML = `
-      <h1>${post.title}</h1>
-      <p class="blog-date"><i class="fas fa-calendar-alt"></i> ${post.date}</p>
-      ${post.image ? `<img src="${post.image}" alt="${post.title}" class="blog-post-img">` : ""}
-      <p>${post.excerpt}</p>
-      <p>${post.content || "Full content coming soon..."}</p>
-      <div class="post-navigation">
-      ${postId > 0 ? `<a href="blog-post.html?id=${postId - 1}" class="nav-link">← Previous</a>` : ""}
-      ${postId < posts.length - 1 ? `<a href="blog-post.html?id=${postId + 1}" class="nav-link">Next →</a>` : ""}
-      </div>
+        <h1>${post.title}</h1>
+        <p class="blog-date"><i class="fas fa-calendar-alt"></i> ${post.date}</p>
+        ${post.image ? `<img src="${post.image}" alt="${post.title}" class="blog-post-img">` : ""}
+        <div class="blog-content">${post.content}</div>
       `;
     })
-    .catch(error => console.error("Error loading blog post:", error));
-  </script>
+    .catch(error => {
+      console.error("Error loading blog post:", error);
+      document.getElementById("blogPostContent").innerHTML = "<p>Post not found.</p>";
+    });
+</script>
+
 
 </body>
 </html>

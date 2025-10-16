@@ -1,0 +1,8 @@
+{
+    "id": 1,
+    "title": "Learning Cybersecurity",
+    "date": "Jan 2025",
+    "excerpt": "My journey into SOC operations, incident response, and cloud security.",
+    "image": "assets/images/blog/cybersec.jpg",
+    "content": "I started learning SOC tools like Microsoft Sentinel and Splunk, simulating real incidents..."
+  }
