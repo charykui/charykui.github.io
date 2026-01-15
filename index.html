@@ -3,14 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Portfolio</title>
+  <title>Charity Chepkirui | Cyber & Cloud Security</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon.png">
   <style type="text/css">
     /* Prevent scroll on landing page */
     body, html {
-      margin: 0;
+      margin: 0;1
       padding: 0;
       height: 100%;
       overflow: hidden; /* disables scrolling */
@@ -55,7 +57,7 @@
       </div>
 
       <!-- CV Request Button -->
-  <button onclick="openCVRequest()" class="btn-cv">Request Resume</button>
+      <button onclick="openCVRequest()" class="btn-cv">Request Resume</button>
 
 
     </div>
@@ -76,46 +78,46 @@
   </div>
 
   <!-- CV Request popup -->
-<script>
-  const cvPopup = document.getElementById("cvPopup");
-  const cvForm = document.getElementById("cvRequestForm");
-  const cvStatus = document.getElementById("cv-status");
+  <script>
+    const cvPopup = document.getElementById("cvPopup");
+    const cvForm = document.getElementById("cvRequestForm");
+    const cvStatus = document.getElementById("cv-status");
 
-  function openCVRequest() {
-    cvPopup.style.display = "flex";
-  }
+    function openCVRequest() {
+      cvPopup.style.display = "flex";
+    }
 
-  function closeCVRequest() {
-    cvPopup.style.display = "none";
-  }
+    function closeCVRequest() {
+      cvPopup.style.display = "none";
+    }
 
-  cvForm.addEventListener("submit", async function(e) {
-    e.preventDefault();
-    const data = new FormData(cvForm);
+    cvForm.addEventListener("submit", async function(e) {
+      e.preventDefault();
+      const data = new FormData(cvForm);
 
-    try {
-      const response = await fetch(cvForm.action, {
-        method: cvForm.method,
-        body: data,
-        headers: { 'Accept': 'application/json' }
-      });
+      try {
+        const response = await fetch(cvForm.action, {
+          method: cvForm.method,
+          body: data,
+          headers: { 'Accept': 'application/json' }
+        });
 
-      if (response.ok) {
-        cvStatus.textContent = "✅ Thank you! I’ll send you my CV promptly.";
-        cvStatus.className = "form-status success";
-        cvStatus.style.display = "block";
-        cvForm.reset();
-      } else {
-        cvStatus.textContent = "❌ Error. Please try again later.";
+        if (response.ok) {
+          cvStatus.textContent = "✅ Thank you! I’ll send you my CV promptly.";
+          cvStatus.className = "form-status success";
+          cvStatus.style.display = "block";
+          cvForm.reset();
+        } else {
+          cvStatus.textContent = "❌ Error. Please try again later.";
+          cvStatus.className = "form-status error";
+          cvStatus.style.display = "block";
+        }
+      } catch (error) {
+        cvStatus.textContent = "❌ Network error.";
         cvStatus.className = "form-status error";
         cvStatus.style.display = "block";
       }
-    } catch (error) {
-      cvStatus.textContent = "❌ Network error.";
-      cvStatus.className = "form-status error";
-      cvStatus.style.display = "block";
-    }
-  });
-</script>
+    });
+  </script>
 </body>
 </html>
