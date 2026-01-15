@@ -15,7 +15,8 @@
       "results": "Successfully secured the domain’s email system against spoofing and phishing. Validation tests confirmed SPF=pass, DKIM=pass, and DMARC=pass in email headers.",
 
   "screenshots": [
-    "assets/images/email.png"
+    "assets/images/email.png",
+    "assets/images/report.png"
   ],
   "video": "https://www.youtube.com/embed/zXpGgv2I9yo"
 }

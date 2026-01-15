@@ -1,0 +1,58 @@
+{
+  "Security": [
+    {
+      "id": "email-security",
+      "title": "Secure Email Solutions",
+      "description": "Implemented SPF, DKIM and DMARC records to protect domain email integrity.",
+      "jsonFile": "assets/data/projects/security/email-security.json"
+    },
+    {
+      "id": "firewall-configuration",
+      "title": "Firewall Configuration and Automation",
+      "description": "Automated firewall rule deployment and security configuration using PowerShell scripts.",
+      "jsonFile": "assets/data/projects/security/firewall-configuration.json"
+    }
+  ],
+
+  "Cloud": [
+    {
+      "id": "azure-deployment",
+      "title": "Azure Resource Deployment",
+      "description": "Infrastructure as Code project deploying Azure resources.",
+      "jsonFile": "assets/data/projects/cloud/azure-deployment.json"
+    },
+    {
+      "id": "cloud-backup",
+      "title": "Cloud Backup & Recovery",
+      "description": "Configured Azure Backup and tested VM restore.",
+      "jsonFile": "assets/data/projects/cloud/cloud-backup.json"
+    }
+  ],
+
+  "SIEM": [
+    {
+      "id": "splunk",
+      "title": "Splunk Log Analysis",
+      "description": "Detected anomalies in system logs with dashboards.",
+      "jsonFile": "assets/data/projects/siem/splunk.json"
+    }
+  ],
+
+  "Pentest": [
+    {
+      "id": "web-pentest",
+      "title": "Web Application Pentest",
+      "description": "OWASP Top 10 assessment using Burp Suite.",
+      "jsonFile": "assets/data/projects/pentest/web-pentest.json"
+    }
+  ],
+
+  "Vulnerability Management": [
+    {
+      "id": "openvas-docker",
+      "title": "OpenVAS in Docker",
+      "description": "Set up OpenVAS using Docker and conducted vulnerability scans.",
+      "jsonFile": "assets/data/projects/vuln-management/openvas-docker.json"
+    }
+  ]
+}

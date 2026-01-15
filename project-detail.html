@@ -35,8 +35,13 @@
       <h2>Steps</h2>
       <ul id="project-steps"></ul>
 
+
       <h2>Results</h2>
       <p id="project-results"></p>
+
+      <h2>Challenges & Solutions</h2>
+      <div id="project-challenges"></div>
+
 
       <h2>Screenshots</h2>
       <div id="project-screenshots" class="screenshot-grid"></div>
@@ -63,124 +68,146 @@
 
   <!-- JS to load project -->
   <script>
-    async function loadProject() {
-      const params = new URLSearchParams(window.location.search);
-      const id = params.get("id");
+    
+async function loadProject() {
+  const params = new URLSearchParams(window.location.search);
+  const file = params.get("file");
 
-      try {
-        const response = await fetch("assets/data/projects.json");
-        const data = await response.json();
+  console.log("Loading project file:", file);
 
-        let project = null;
+  if (!file) {
+    document.querySelector(".detail-card").innerHTML =
+      "<h1>No project selected</h1><a href='projects.html'>← Back</a>";
+    return;
+  }
 
-        // Search all categories for the project ID
-        for (const [category, projects] of Object.entries(data)) {
-          if (projects[id]) {
-            project = projects[id];
-            break;
-          }
-        }
+  try {
+    const response = await fetch(file);
 
-        if (project) {
-          document.getElementById("project-title").textContent = project.title;
-          document.getElementById("project-description").textContent = project.description || "";
-
-          document.getElementById("project-objective").textContent = project.objective || "No objective provided.";
-
-          // Steps
-          const stepsList = document.getElementById("project-steps");
-          stepsList.innerHTML = "";
-          if (project.steps) {
-            project.steps.forEach(step => {
-              const li = document.createElement("li");
-              li.textContent = step;
-              stepsList.appendChild(li);
-            });
-          }
-
-          document.getElementById("project-results").textContent = project.results || "No results provided.";
-
-          // Screenshots
-          const screenshotDiv = document.getElementById("project-screenshots");
-          screenshotDiv.innerHTML = "";
-          if (project.screenshots) {
-            project.screenshots.forEach(src => {
-              const img = document.createElement("img");
-              img.src = src;
-              img.alt = "Project Screenshot";
-              screenshotDiv.appendChild(img);
-            });
-          }
-          // Lightbox for screenshots
-          const lightbox = document.getElementById("lightbox");
-          const lightboxImg = document.getElementById("lightbox-img");
-          const closeBtn = document.querySelector(".lightbox .close");
-          const prevBtn = document.querySelector(".lightbox .prev");
-          const nextBtn = document.querySelector(".lightbox .next");
-
-          let screenshots = [];
-          let currentIndex = 0;
-
-          function openLightbox(index) {
-            currentIndex = index;
-            lightbox.style.display = "flex";
-            lightboxImg.src = screenshots[currentIndex].src;
-          }
-
-          function showNext() {
-            currentIndex = (currentIndex + 1) % screenshots.length;
-            lightboxImg.src = screenshots[currentIndex].src;
-          }
-
-          function showPrev() {
-            currentIndex = (currentIndex - 1 + screenshots.length) % screenshots.length;
-            lightboxImg.src = screenshots[currentIndex].src;
-          }
-
-          function closeLightbox() {
-            lightbox.style.display = "none";
-          }
-
-          closeBtn.addEventListener("click", closeLightbox);
-          nextBtn.addEventListener("click", showNext);
-          prevBtn.addEventListener("click", showPrev);
-
-          lightbox.addEventListener("click", (e) => {
-            if (e.target === lightbox) closeLightbox();
-          });
-
-// Attach to screenshots after they are loaded
-          setTimeout(() => {
-            screenshots = Array.from(document.querySelectorAll("#project-screenshots img"));
-            screenshots.forEach((img, index) => {
-              img.addEventListener("click", () => openLightbox(index));
-            });
-          }, 500);
-
-
-          // Video
-          const videoDiv = document.getElementById("project-video");
-          videoDiv.innerHTML = "";
-          if (project.video) {
-            videoDiv.innerHTML = `
-            <div class="video-container">
-            <iframe width="100%" height="400" src="${project.video}" 
-            frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-            allowfullscreen></iframe>
-            </div>
-            `;
-          }
-
-        } else {
-          document.querySelector(".detail-card").innerHTML =
-            "<h1>Project Not Found</h1><a href='projects.html'>← Back to Projects</a>";
-        }
-      } catch (error) {
-        console.error("Error loading project:", error);
-      }
+    if (!response.ok) {
+      throw new Error("Failed to load JSON: " + response.status);
     }
 
-    loadProject();
+    const project = await response.json();
+    console.log("PROJECT DATA:", project);
+
+    // Title & description
+    document.getElementById("project-title").textContent = project.title || "Untitled Project";
+    document.getElementById("project-description").textContent = project.description || "";
+
+    // Objective
+    document.getElementById("project-objective").textContent =
+      project.objective || "No objective provided.";
+
+    // Steps
+    const stepsList = document.getElementById("project-steps");
+    stepsList.innerHTML = "";
+    (project.steps || []).forEach(step => {
+      const li = document.createElement("li");
+      li.textContent = step;
+      stepsList.appendChild(li);
+    });
+
+    // Results
+    document.getElementById("project-results").textContent =
+      project.results || "No results provided.";
+
+    // Challenges
+    const challengesDiv = document.getElementById("project-challenges");
+    challengesDiv.innerHTML = "";
+    (project.challenges || []).forEach(ch => {
+      const div = document.createElement("div");
+      div.classList.add("challenge-item");
+      div.innerHTML = `
+        <p><strong>Problem:</strong> ${ch.problem}</p>
+        <p><strong>Solution:</strong> ${ch.solution}</p>
+      `;
+      challengesDiv.appendChild(div);
+    });
+
+    // Screenshots
+const screenshotDiv = document.getElementById("project-screenshots");
+screenshotDiv.innerHTML = "";
+
+let screenshots = [];
+let currentIndex = 0;
+
+if (project.screenshots && project.screenshots.length > 0) {
+  project.screenshots.forEach((src, index) => {
+    const img = document.createElement("img");
+    img.src = src;
+    img.alt = "Project Screenshot";
+    img.classList.add("screenshot");
+    screenshotDiv.appendChild(img);
+  });
+
+  // After images are added to DOM
+  screenshots = Array.from(document.querySelectorAll(".screenshot"));
+
+  screenshots.forEach((img, index) => {
+    img.addEventListener("click", () => openLightbox(index));
+  });
+}
+
+/* -------- Lightbox Logic -------- */
+
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = document.getElementById("lightbox-img");
+const closeBtn = document.querySelector(".lightbox .close");
+const nextBtn = document.querySelector(".lightbox .next");
+const prevBtn = document.querySelector(".lightbox .prev");
+
+function openLightbox(index) {
+  currentIndex = index;
+  lightbox.style.display = "flex";
+  lightboxImg.src = screenshots[currentIndex].src;
+}
+
+function closeLightbox() {
+  lightbox.style.display = "none";
+}
+
+function showNext() {
+  currentIndex = (currentIndex + 1) % screenshots.length;
+  lightboxImg.src = screenshots[currentIndex].src;
+}
+
+function showPrev() {
+  currentIndex = (currentIndex - 1 + screenshots.length) % screenshots.length;
+  lightboxImg.src = screenshots[currentIndex].src;
+}
+
+/* -------- Events -------- */
+closeBtn.onclick = closeLightbox;
+nextBtn.onclick = showNext;
+prevBtn.onclick = showPrev;
+
+// Close when clicking outside image
+lightbox.addEventListener("click", (e) => {
+  if (e.target === lightbox) closeLightbox();
+});
+
+
+    // Video
+    const videoDiv = document.getElementById("project-video");
+    videoDiv.innerHTML = "";
+    if (project.video) {
+      videoDiv.innerHTML = `
+        <div class="video-container">
+          <iframe src="${project.video}" allowfullscreen></iframe>
+        </div>
+      `;
+    }
+
+  } catch (error) {
+    console.error("ERROR:", error);
+    document.querySelector(".detail-card").innerHTML =
+      "<h1>Error loading project</h1><a href='projects.html'>← Back</a>";
+  }
+}
+
+loadProject();
+
   </script>
 </body>
 </html>

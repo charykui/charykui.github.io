@@ -1,0 +1,26 @@
+{
+  "title": "Splunk Log Analysis",
+  "description": "Detected anomalies in system logs with dashboards.",
+  "objective": "Practice log analysis with SIEM tools.",
+  "steps": [
+    "Installed Splunk server.",
+    "Configured log ingestion.",
+    "Created dashboards for monitoring."
+  ],
+  "results": "Detected suspicious login attempts from attacker IP.",
+  "screenshots": [
+    "assets/labs/siem-log.png",
+    "assets/labs/siem-dashboard.png"
+  ],
+  "video": "https://www.youtube.com/embed/your-video-id",
+  "challenges": [
+    {
+      "problem": "Some logs were not being ingested.",
+      "solution": "Checked input configuration and adjusted source types."
+    },
+    {
+      "problem": "Dashboard panels did not display correct data.",
+      "solution": "Verified queries and time ranges for consistency."
+    }
+  ]
+}

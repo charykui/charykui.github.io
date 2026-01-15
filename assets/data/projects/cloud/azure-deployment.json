@@ -1,0 +1,26 @@
+{
+  "title": "Azure Resource Deployment",
+  "description": "Infrastructure as Code project deploying Azure resources.",
+  "objective": "Automate Azure deployments using ARM templates & Bicep.",
+  "steps": [
+    "Created ARM templates for VM and storage setup.",
+    "Parameterized deployment for reusability.",
+    "Validated deployment with Azure CLI."
+  ],
+  "results": "Successfully deployed a scalable VM + storage setup in Azure.",
+  "screenshots": [
+    "assets/projects/azure-ad-setup.png",
+    "assets/projects/azure-ad-dashboard.png"
+  ],
+  "video": "https://www.youtube.com/embed/your-video-id",
+  "challenges": [
+    {
+      "problem": "Template deployment failed due to missing parameters.",
+      "solution": "Reviewed and added default values to all required parameters."
+    },
+    {
+      "problem": "VM provisioning took longer than expected.",
+      "solution": "Enabled parallel deployment options in ARM template."
+    }
+  ]
+}

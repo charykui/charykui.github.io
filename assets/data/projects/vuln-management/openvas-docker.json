@@ -1,0 +1,27 @@
+{
+  "title": "OpenVAS in Docker",
+  "description": "Installing Docker then OpenVAS and testing by checking for vulnerabilities.",
+  "objective": "Learn how to set up OpenVAS using Docker and conduct vulnerability scans, then interpret the results.",
+  "steps": [
+    "Install Docker on Linux-based (Kali Linux) virtual machine.",
+    "Set up a Windows virtual machine (Windows 7) as the target for the scan.",
+    "Use OpenVAS to conduct a vulnerability scan on the Windows VM.",
+    "Report vulnerabilities with remediation steps."
+  ],
+  "results": "OpenVAS loads over 40,000 NVTs and over 100,000 CVEs. Each vulnerability is assigned a different severity level.",
+  "screenshots": [
+    "assets/labs/openvas-1.png",
+    "assets/labs/openvas-2.png"
+  ],
+  "video": "https://www.canva.com/design/DAG0cPmT-Wg/rB4iTnWUXAfSgGvSJtUXNg/watch",
+  "challenges": [
+    {
+      "problem": "Docker container failed to start due to port conflicts.",
+      "solution": "Mapped OpenVAS ports to available host ports."
+    },
+    {
+      "problem": "Scan results were incomplete.",
+      "solution": "Updated NVT database and reran the scan."
+    }
+  ]
+}

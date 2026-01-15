@@ -1,0 +1,26 @@
+{
+  "title": "Cloud Backup & Recovery",
+  "description": "Configured Azure Backup and tested VM restore.",
+  "objective": "Ensure disaster recovery with Azure Backup.",
+  "steps": [
+    "Configured Azure Backup vault.",
+    "Backed up Windows VM.",
+    "Tested restore to verify process."
+  ],
+  "results": "VM restore completed successfully within RTO/RPO limits.",
+  "screenshots": [
+    "assets/projects/cloud-backup.png",
+    "assets/projects/cloud-restore.png"
+  ],
+  "video": "https://www.youtube.com/embed/your-video-id",
+  "challenges": [
+    {
+      "problem": "Backup failed due to insufficient permissions.",
+      "solution": "Assigned proper RBAC roles to the Backup vault."
+    },
+    {
+      "problem": "Restore took longer than expected.",
+      "solution": "Optimized backup retention policies and tested incremental restore."
+    }
+  ]
+}

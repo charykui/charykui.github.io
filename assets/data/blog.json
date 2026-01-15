@@ -1,5 +1,13 @@
 [
   {
+  "id": 4,
+    "title": "Cybersecurity Threats and Trends (2024 – 2025)",
+    "date": "Oct 2025",
+    "excerpt": "A report on current Cybersecurity key threats and trends within the past year",
+    "image": "assets/images/blog/trends.jpg",
+    "content": "Over the past year, there has been quite an increase in cyber security trends and emerging risks"
+  },
+  {
     "id": 3,
     "title": "Award - Best Female Security Engineer",
     "date": "Oct 2025",

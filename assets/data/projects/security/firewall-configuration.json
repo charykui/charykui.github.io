@@ -1,0 +1,30 @@
+{
+  "title": "Firewall Management Using PowerShell Script",
+  "description": "Automating firewall management on local and remote machines using PowerShell .",
+  "objective": "Create a PowerShell script that detects whether Windows Firewall is enabled on local or remote machines, enables it if disabled and confirms the firewall state.",
+  "steps": [
+    "Configured VirtualBox VMs with Host-Only networking",
+    "Verified connectivity using ping and assign valid IP addresses",
+    "Run winrm quickconfig on each VM to configure WinRM service, listener and firewall rules",
+    "Changed network profile to Private to allow WinRM firewall exceptions",
+    "Enabled PowerShell Remoting on VMs using Enable-PSRemoting -Force",
+    "Started WinRM service and verify listener with Test-WsMan localhost",
+    "Configured TrustedHosts on host to include VM IPs",
+    "Tested remote connectivity with Invoke-Command and Get-Credential",
+    "Checked firewall status using 'Get-NetFirewallProfile' or 'netsh advfirewall show allprofiles'",
+    "Disabled firewall in one virtual machine using 'Set-NetFirewallProfile -Profile Domain, Private,Public -Enabled False' or 'netsh advfirewall set allprofiles state on'  to create a vulnerable machine",
+    "Automatically checked and enabled firewall if disabled using firewall_check.ps1 script"
+  ],
+  "results":"Successfully checked and enabled firewall on host machine and connected to remote machines using PowerShell Remoting, detected firewall status accurately and enabled firewall where needed",
+  "screenshots": [
+    "assets/images/projects/firewall1.png",
+    "assets/images/projects/firewall2.png"
+  ],
+  "video": "https://www.youtube.com/embed/TnKiDJmoF-w",
+  "challenges": [
+    {
+      "problem": "WinRM firewall exception failed because the network profile on VM was Public",
+      "solution": "Changed network profile to Private"
+    }
+  ]
+}
