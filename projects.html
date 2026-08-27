@@ -3,16 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Charity Chepkirui | Cyber & Cloud Security</title>
+  <title>Charity Chepkirui | My Work</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon.png">
 </head>
 <body>
-
-  <!-- Navbar -->
   <nav>
     <div class="logo">
       <img src="assets/images/logo.png" alt="Logo" class="logo-img">
@@ -26,94 +23,50 @@
     </ul>
   </nav>
 
-  <!-- Page Title -->
   <main>
-    <h1 class="page-title">Projects & Labs</h1>
+    <h1 class="page-title">My Work</h1>
+    <p class="work-intro">Explore my work across cybersecurity, data, design, and web development.</p>
 
-    <!-- Tabs -->
-    <div class="tabs" id="tabs-container"></div>
+    <section class="work-category-grid">
+      <a class="work-category-card" href="cybersecurity.html">
+        <div class="work-icon"><i class="fas fa-shield-halved"></i></div>
+        <h2>Cybersecurity</h2>
+        <p>Security, cloud, SIEM, penetration testing and vulnerability management projects.</p>
+        <span>Explore Work →</span>
+      </a>
 
-    <!-- Tab Contents -->
-    <div id="tab-contents"></div>
+      <a class="work-category-card" href="annotation.html">
+        <div class="work-icon"><i class="fas fa-tags"></i></div>
+        <h2>Data Annotation</h2>
+        <p>Annotation work including image, text, classification and segmentation tasks.</p>
+        <span>Explore Work →</span>
+      </a>
+
+      <a class="work-category-card" href="analytics.html">
+        <div class="work-icon"><i class="fas fa-chart-line"></i></div>
+        <h2>Data Analytics</h2>
+        <p>Data analysis, cleaning, dashboards, SQL and data visualization projects.</p>
+        <span>Explore Work →</span>
+      </a>
+
+      <a class="work-category-card" href="design.html">
+        <div class="work-icon"><i class="fas fa-palette"></i></div>
+        <h2>Graphic Design</h2>
+        <p>Posters, social media graphics, branding concepts and other visual work.</p>
+        <span>Explore Work →</span>
+      </a>
+
+      <a class="work-category-card" href="web-design.html">
+        <div class="work-icon"><i class="fas fa-laptop-code"></i></div>
+        <h2>Web Design & Development</h2>
+        <p>Websites, landing pages, interfaces and web development projects.</p>
+        <span>Explore Work →</span>
+      </a>
+    </section>
   </main>
 
-  <!-- Footer -->
   <footer>
-    <p>&copy; 2025 Charity Chepkirui | Cybersecurity Portfolio</p>
+    <p>&copy; 2025 Charity Chepkirui | Professional Portfolio</p>
   </footer>
-
-  <!-- JS -->
-  <script>
-    async function loadProjects() {
-      try {
-        const response = await fetch("assets/data/projects-main.json");
-        const data = await response.json();
-
-        const tabsContainer = document.getElementById("tabs-container");
-        const contentsContainer = document.getElementById("tab-contents");
-
-        tabsContainer.innerHTML = "";
-        contentsContainer.innerHTML = "";
-
-        let first = true;
-
-        for (const [category, projects] of Object.entries(data)) {
-
-          // Safe ID for tabs (no spaces)
-          const safeId = category.replace(/\s+/g, "-").toLowerCase();
-
-          /* -------- Tab Button -------- */
-          const btn = document.createElement("button");
-          btn.className = "tab-btn" + (first ? " active" : "");
-          btn.dataset.tab = safeId;
-          btn.textContent = category;
-          tabsContainer.appendChild(btn);
-
-          /* -------- Tab Content -------- */
-          const content = document.createElement("div");
-          content.id = safeId;
-          content.className = "tab-content" + (first ? " active" : "");
-
-          const grid = document.createElement("div");
-          grid.classList.add("mini-card-grid");
-
-          projects.forEach(project => {
-            const card = document.createElement("div");
-            card.classList.add("mini-card");
-            card.innerHTML = `
-              <h3>${project.title}</h3>
-              <p>${project.description}</p>
-              <a href="project-detail.html?file=${project.jsonFile}" class="view-link">
-                View Details →
-              </a>
-            `;
-            grid.appendChild(card);
-          });
-
-          content.appendChild(grid);
-          contentsContainer.appendChild(content);
-
-          first = false;
-        }
-
-        /* -------- Tab Switching -------- */
-        document.querySelectorAll(".tab-btn").forEach(btn => {
-          btn.addEventListener("click", () => {
-            document.querySelectorAll(".tab-btn").forEach(b => b.classList.remove("active"));
-            document.querySelectorAll(".tab-content").forEach(c => c.classList.remove("active"));
-
-            btn.classList.add("active");
-            document.getElementById(btn.dataset.tab).classList.add("active");
-          });
-        });
-
-      } catch (error) {
-        console.error("Error loading projects:", error);
-      }
-    }
-
-    loadProjects();
-  </script>
-
 </body>
 </html>
