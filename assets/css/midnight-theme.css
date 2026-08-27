@@ -1,1 +1,14 @@
-body{background:#0B1220;color:#E2E8F0}h1,h2,h3{color:#F1F5F9}nav{background:#111C2E;box-shadow:0 2px 10px rgba(0,0,0,.35)}nav ul li a{color:#CBD5E1}nav ul li a:hover,nav ul li a.active{color:#60A5FA}.page-title{color:#60A5FA}.work-intro{color:#94A3B8}.card,.mini-card,.detail-card,.work-category-card{background:#111C2E;color:#E2E8F0;border-color:#24344D;box-shadow:0 3px 10px rgba(0,0,0,.3)}.card h3,.mini-card h3,.detail-card h1{color:#60A5FA}.card p,.mini-card p,.detail-card p{color:#94A3B8}.tab-btn{background:#111C2E;color:#60A5FA;border-color:#3B82F6}.tab-btn:hover,.tab-btn.active{background:#3B82F6;color:#fff}.tabs{border-bottom-color:#24344D}footer{background:#111C2E;color:#94A3B8;border-top-color:#24344D}.work-category-card h2{color:#F1F5F9}.work-category-card p{color:#94A3B8}.work-category-card span{color:#60A5FA}.work-icon{background:#17243A;color:#60A5FA}.back-to-work a{color:#60A5FA}.back-to-work a:hover{color:#93C5FD}.skills-list li{background:#17243A;color:#CBD5E1;border-color:#3B82F6}.about-me p{color:#CBD5E1}.timeline{border-left-color:#3B82F6}.timeline-item h3{color:#60A5FA}.detail-card h2{color:#CBD5E1}.detail-card ul{color:#CBD5E1}
+/* Midnight Blue site-wide theme */
+body{background:#0B1220;color:#CBD5E1}
+h1,h2,h3{color:#F1F5F9}
+nav{background:#111C2E;border-bottom:1px solid #24344D;box-shadow:0 2px 10px rgba(0,0,0,.28)}
+nav ul li a{color:#CBD5E1}nav ul li a:hover,nav ul li a.active{color:#60A5FA}
+footer{background:#111C2E;color:#94A3B8;border-top:1px solid #24344D}
+.hero{background:linear-gradient(135deg,#0B1220,#111C2E)}.hero-right h1{color:#F1F5F9}.hero-right p,.about-text,.tagline{color:#CBD5E1}.highlight,.page-title{color:#60A5FA}
+.card,.mini-card,.detail-card,.blog-card,.contact-wrapper,.blog-post-wrapper,.work-category-card{background:#17243A;color:#CBD5E1;border:1px solid #24344D;box-shadow:0 3px 10px rgba(0,0,0,.28)}
+.card h3,.mini-card h3,.detail-card h1,.blog-card h2{color:#60A5FA}.card p,.mini-card p,.detail-card p,.blog-card p{color:#AAB8CC}
+.tabs{border-bottom-color:#24344D}.tab-btn{background:#17243A;color:#93C5FD;border-color:#24344D}.tab-btn:hover,.tab-btn.active{background:#3B82F6;color:#fff}
+.work-intro{color:#AAB8CC}.work-category-card h2{color:#F1F5F9}.work-category-card p{color:#AAB8CC}.work-category-card span,.back-to-work a,.back-link,.view-link,.read-more{color:#60A5FA}.work-icon{background:#1E304A;color:#60A5FA}
+.skills-list li{background:#17243A;color:#CBD5E1;border-color:#334155}.timeline{border-left-color:#3B82F6}.timeline-item h3{color:#60A5FA}.about-me p{color:#CBD5E1}
+input,textarea,select,.contact-form input,.contact-form textarea{background:#17243A;color:#E2E8F0;border-color:#334155}.popup-box{background:#17243A;color:#E2E8F0}
+.btn-cv,.contact-form button{background:#3B82F6;color:#fff}.circle-btn{color:#60A5FA;border-color:#3B82F6}.circle-btn:hover{background:#3B82F6;color:#fff}
