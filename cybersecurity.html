@@ -11,82 +11,14 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon.png">
 </head>
 <body>
-  <nav>
-    <div class="logo">
-      <img src="assets/images/logo.png" alt="Logo" class="logo-img">
-    </div>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="resume.html">Resume</a></li>
-      <li><a href="projects.html" class="active">Projects</a></li>
-      <li><a href="blog.html">Blog</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
-
+  <nav><div class="logo"><img src="assets/images/logo.png" alt="Logo" class="logo-img"></div><ul><li><a href="index.html">Home</a></li><li><a href="resume.html">Resume</a></li><li><a href="projects.html" class="active">Projects</a></li><li><a href="blog.html">Blog</a></li><li><a href="contact.html">Contact</a></li></ul></nav>
   <main>
+    <div class="back-to-work"><a href="projects.html">← Back to My Work</a></div>
     <h1 class="page-title">Cybersecurity Projects & Labs</h1>
-    <div class="tabs" id="tabs-container"></div>
-    <div id="tab-contents"></div>
+    <div class="tabs" id="tabs-container"></div><div id="tab-contents"></div>
   </main>
-
-  <footer>
-    <p>&copy; 2025 Charity Chepkirui | Cybersecurity Portfolio</p>
-  </footer>
-
+  <footer><p>&copy; 2025 Charity Chepkirui | Cybersecurity Portfolio</p></footer>
   <script>
-    async function loadProjects() {
-      try {
-        const response = await fetch("assets/data/projects-main.json");
-        const data = await response.json();
-        const tabsContainer = document.getElementById("tabs-container");
-        const contentsContainer = document.getElementById("tab-contents");
-        tabsContainer.innerHTML = "";
-        contentsContainer.innerHTML = "";
-        let first = true;
-
-        for (const [category, projects] of Object.entries(data)) {
-          const safeId = category.replace(/\s+/g, "-").toLowerCase();
-          const btn = document.createElement("button");
-          btn.className = "tab-btn" + (first ? " active" : "");
-          btn.dataset.tab = safeId;
-          btn.textContent = category;
-          tabsContainer.appendChild(btn);
-
-          const content = document.createElement("div");
-          content.id = safeId;
-          content.className = "tab-content" + (first ? " active" : "");
-          const grid = document.createElement("div");
-          grid.classList.add("mini-card-grid");
-
-          projects.forEach(project => {
-            const card = document.createElement("div");
-            card.classList.add("mini-card");
-            card.innerHTML = `
-              <h3>${project.title}</h3>
-              <p>${project.description}</p>
-              <a href="project-detail.html?file=${project.jsonFile}" class="view-link">View Details →</a>
-            `;
-            grid.appendChild(card);
-          });
-          content.appendChild(grid);
-          contentsContainer.appendChild(content);
-          first = false;
-        }
-
-        document.querySelectorAll(".tab-btn").forEach(btn => {
-          btn.addEventListener("click", () => {
-            document.querySelectorAll(".tab-btn").forEach(b => b.classList.remove("active"));
-            document.querySelectorAll(".tab-content").forEach(c => c.classList.remove("active"));
-            btn.classList.add("active");
-            document.getElementById(btn.dataset.tab).classList.add("active");
-          });
-        });
-      } catch (error) {
-        console.error("Error loading projects:", error);
-      }
-    }
-    loadProjects();
+    async function loadProjects(){try{const response=await fetch("assets/data/projects-main.json");const data=await response.json();const tabsContainer=document.getElementById("tabs-container");const contentsContainer=document.getElementById("tab-contents");tabsContainer.innerHTML="";contentsContainer.innerHTML="";let first=true;for(const [category,projects] of Object.entries(data)){const safeId=category.replace(/\s+/g,"-").toLowerCase();const btn=document.createElement("button");btn.className="tab-btn"+(first?" active":"");btn.dataset.tab=safeId;btn.textContent=category;tabsContainer.appendChild(btn);const content=document.createElement("div");content.id=safeId;content.className="tab-content"+(first?" active":"");const grid=document.createElement("div");grid.classList.add("mini-card-grid");projects.forEach(project=>{const card=document.createElement("div");card.classList.add("mini-card");card.innerHTML=`<h3>${project.title}</h3><p>${project.description}</p><a href="project-detail.html?file=${project.jsonFile}" class="view-link">View Details →</a>`;grid.appendChild(card)});content.appendChild(grid);contentsContainer.appendChild(content);first=false}document.querySelectorAll(".tab-btn").forEach(btn=>{btn.addEventListener("click",()=>{document.querySelectorAll(".tab-btn").forEach(b=>b.classList.remove("active"));document.querySelectorAll(".tab-content").forEach(c=>c.classList.remove("active"));btn.classList.add("active");document.getElementById(btn.dataset.tab).classList.add("active")})})}catch(error){console.error("Error loading projects:",error)}}loadProjects();
   </script>
-</body>
-</html>
+</body></html>
