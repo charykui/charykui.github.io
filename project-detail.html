@@ -1,216 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Charity Chepkirui | Cyber & Cloud Security</title>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Charity Chepkirui | Project Details</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/midnight-theme.css?v=20260829-4" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon.png">
 </head>
 <body>
-  <!-- Navbar -->
-  <nav>
-    <div class="logo">
-      <img src="assets/images/logo.png" alt="Logo" class="logo-img">
-    </div>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="resume.html">Resume</a></li>
-      <li><a href="projects.html" class="active">Projects</a></li>
-      <li><a href="blog.html">Blog</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
-
-  <!-- Project Detail -->
-  <main>
-    <section class="detail-card">
-      <a href="projects.html" class="view-link">← Back</a>
-      <h1 id="project-title">Loading...</h1>
-      <p id="project-description"></p>
-
-      <h2>Objective</h2>
-      <p id="project-objective"></p>
-
-      <h2>Steps</h2>
-      <ul id="project-steps"></ul>
-
-
-      <h2>Results</h2>
-      <p id="project-results"></p>
-
-      <h2>Challenges & Solutions</h2>
-      <div id="project-challenges"></div>
-
-
-      <h2>Screenshots</h2>
-      <div id="project-screenshots" class="screenshot-grid"></div>
-
-      <h2>Video Walkthrough</h2>
-      <div id="project-video"></div>
-
-      <a href="projects.html" class="view-link">← Back to Projects</a>
-    </section>
-  </main>
-  <!-- Lightbox for screenshots -->
-  <div id="lightbox" class="lightbox">
-    <span class="close">&times;</span>
-    <span class="prev">&#10094;</span>
-    <img class="lightbox-content" id="lightbox-img">
-    <span class="next">&#10095;</span>
-  </div>
-
-
-
-  <footer>
-    <p>&copy; 2025 Charity Chepkirui | Cybersecurity Portfolio</p>
-  </footer>
-
-  <!-- JS to load project -->
+  <nav><div class="logo"><img src="assets/images/charity-logo.svg" alt="Charity Chepkirui" class="logo-img"></div><ul><li><a href="index.html">Home</a></li><li><a href="resume.html">Resume</a></li><li><a href="projects.html" class="active">Projects</a></li><li><a href="blog.html">Blog</a></li><li><a href="contact.html">Contact</a></li></ul></nav>
+  <main><section class="detail-card">
+    <a href="projects.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to Projects</a>
+    <h1 id="project-title">Loading...</h1><p id="project-description"></p>
+    <h2>Objective</h2><p id="project-objective"></p>
+    <h2>Steps</h2><ul id="project-steps"></ul>
+    <h2>Results</h2><p id="project-results"></p>
+    <h2>Challenges & Solutions</h2><div id="project-challenges"></div>
+    <h2>Screenshots</h2><div id="project-screenshots" class="screenshot-grid"></div>
+    <h2>Video Walkthrough</h2><div id="project-video"></div>
+    <a href="projects.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to Projects</a>
+  </section></main>
+  <div id="lightbox" class="lightbox"><span class="close">&times;</span><span class="prev">&#10094;</span><img class="lightbox-content" id="lightbox-img"><span class="next">&#10095;</span></div>
+  <footer><p>&copy; 2025 Charity Chepkirui | Professional Portfolio</p></footer>
   <script>
-    
-async function loadProject() {
-  const params = new URLSearchParams(window.location.search);
-  const file = params.get("file");
-
-  console.log("Loading project file:", file);
-
-  if (!file) {
-    document.querySelector(".detail-card").innerHTML =
-      "<h1>No project selected</h1><a href='projects.html'>← Back</a>";
-    return;
-  }
-
-  try {
-    const response = await fetch(file);
-
-    if (!response.ok) {
-      throw new Error("Failed to load JSON: " + response.status);
-    }
-
-    const project = await response.json();
-    console.log("PROJECT DATA:", project);
-
-    // Title & description
-    document.getElementById("project-title").textContent = project.title || "Untitled Project";
-    document.getElementById("project-description").textContent = project.description || "";
-
-    // Objective
-    document.getElementById("project-objective").textContent =
-      project.objective || "No objective provided.";
-
-    // Steps
-    const stepsList = document.getElementById("project-steps");
-    stepsList.innerHTML = "";
-    (project.steps || []).forEach(step => {
-      const li = document.createElement("li");
-      li.textContent = step;
-      stepsList.appendChild(li);
-    });
-
-    // Results
-    document.getElementById("project-results").textContent =
-      project.results || "No results provided.";
-
-    // Challenges
-    const challengesDiv = document.getElementById("project-challenges");
-    challengesDiv.innerHTML = "";
-    (project.challenges || []).forEach(ch => {
-      const div = document.createElement("div");
-      div.classList.add("challenge-item");
-      div.innerHTML = `
-        <p><strong>Problem:</strong> ${ch.problem}</p>
-        <p><strong>Solution:</strong> ${ch.solution}</p>
-      `;
-      challengesDiv.appendChild(div);
-    });
-
-    // Screenshots
-const screenshotDiv = document.getElementById("project-screenshots");
-screenshotDiv.innerHTML = "";
-
-let screenshots = [];
-let currentIndex = 0;
-
-if (project.screenshots && project.screenshots.length > 0) {
-  project.screenshots.forEach((src, index) => {
-    const img = document.createElement("img");
-    img.src = src;
-    img.alt = "Project Screenshot";
-    img.classList.add("screenshot");
-    screenshotDiv.appendChild(img);
-  });
-
-  // After images are added to DOM
-  screenshots = Array.from(document.querySelectorAll(".screenshot"));
-
-  screenshots.forEach((img, index) => {
-    img.addEventListener("click", () => openLightbox(index));
-  });
-}
-
-/* -------- Lightbox Logic -------- */
-
-const lightbox = document.getElementById("lightbox");
-const lightboxImg = document.getElementById("lightbox-img");
-const closeBtn = document.querySelector(".lightbox .close");
-const nextBtn = document.querySelector(".lightbox .next");
-const prevBtn = document.querySelector(".lightbox .prev");
-
-function openLightbox(index) {
-  currentIndex = index;
-  lightbox.style.display = "flex";
-  lightboxImg.src = screenshots[currentIndex].src;
-}
-
-function closeLightbox() {
-  lightbox.style.display = "none";
-}
-
-function showNext() {
-  currentIndex = (currentIndex + 1) % screenshots.length;
-  lightboxImg.src = screenshots[currentIndex].src;
-}
-
-function showPrev() {
-  currentIndex = (currentIndex - 1 + screenshots.length) % screenshots.length;
-  lightboxImg.src = screenshots[currentIndex].src;
-}
-
-/* -------- Events -------- */
-closeBtn.onclick = closeLightbox;
-nextBtn.onclick = showNext;
-prevBtn.onclick = showPrev;
-
-// Close when clicking outside image
-lightbox.addEventListener("click", (e) => {
-  if (e.target === lightbox) closeLightbox();
-});
-
-
-    // Video
-    const videoDiv = document.getElementById("project-video");
-    videoDiv.innerHTML = "";
-    if (project.video) {
-      videoDiv.innerHTML = `
-        <div class="video-container">
-          <iframe src="${project.video}" allowfullscreen></iframe>
-        </div>
-      `;
-    }
-
-  } catch (error) {
-    console.error("ERROR:", error);
-    document.querySelector(".detail-card").innerHTML =
-      "<h1>Error loading project</h1><a href='projects.html'>← Back</a>";
-  }
-}
-
-loadProject();
-
+async function loadProject(){const params=new URLSearchParams(window.location.search),file=params.get("file");if(!file){document.querySelector(".detail-card").innerHTML="<h1>No project selected</h1><a class='back-link' href='projects.html'>← Back to Projects</a>";return}try{const response=await fetch(file);if(!response.ok)throw new Error("Failed to load JSON: "+response.status);const project=await response.json();document.getElementById("project-title").textContent=project.title||"Untitled Project";document.getElementById("project-description").textContent=project.description||"";document.getElementById("project-objective").textContent=project.objective||"No objective provided.";const stepsList=document.getElementById("project-steps");stepsList.innerHTML="";(project.steps||[]).forEach(step=>{const li=document.createElement("li");li.textContent=step;stepsList.appendChild(li)});document.getElementById("project-results").textContent=project.results||"No results provided.";const challengesDiv=document.getElementById("project-challenges");challengesDiv.innerHTML="";(project.challenges||[]).forEach(ch=>{const div=document.createElement("div");div.classList.add("challenge-item");div.innerHTML=`<p><strong>Problem:</strong> ${ch.problem}</p><p><strong>Solution:</strong> ${ch.solution}</p>`;challengesDiv.appendChild(div)});const screenshotDiv=document.getElementById("project-screenshots");screenshotDiv.innerHTML="";let screenshots=[],currentIndex=0;if(project.screenshots&&project.screenshots.length>0){project.screenshots.forEach(src=>{const img=document.createElement("img");img.src=src;img.alt="Project Screenshot";img.classList.add("screenshot");screenshotDiv.appendChild(img)});screenshots=Array.from(document.querySelectorAll(".screenshot"));screenshots.forEach((img,index)=>img.addEventListener("click",()=>openLightbox(index)))}const lightbox=document.getElementById("lightbox"),lightboxImg=document.getElementById("lightbox-img");function openLightbox(index){currentIndex=index;lightbox.style.display="flex";lightboxImg.src=screenshots[currentIndex].src}function closeLightbox(){lightbox.style.display="none"}function showNext(){currentIndex=(currentIndex+1)%screenshots.length;lightboxImg.src=screenshots[currentIndex].src}function showPrev(){currentIndex=(currentIndex-1+screenshots.length)%screenshots.length;lightboxImg.src=screenshots[currentIndex].src}document.querySelector(".lightbox .close").onclick=closeLightbox;document.querySelector(".lightbox .next").onclick=showNext;document.querySelector(".lightbox .prev").onclick=showPrev;lightbox.addEventListener("click",e=>{if(e.target===lightbox)closeLightbox()});const videoDiv=document.getElementById("project-video");videoDiv.innerHTML="";if(project.video)videoDiv.innerHTML=`<div class="video-container"><iframe src="${project.video}" allowfullscreen></iframe></div>`}catch(error){console.error("ERROR:",error);document.querySelector(".detail-card").innerHTML="<h1>Error loading project</h1><a class='back-link' href='projects.html'>← Back to Projects</a>"}}loadProject();
   </script>
-</body>
-</html>
+</body></html>
