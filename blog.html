@@ -1,1 +1,57 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>Charity Chepkirui | Cyber & Cloud Security</title><link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="assets/css/style.css"/><link rel="stylesheet" href="assets/css/midnight-theme.css"/><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></head><body><nav><div class="logo"><img src="assets/images/logo.png" alt="Logo" class="logo-img"></div><ul><li><a href="index.html">Home</a></li><li><a href="resume.html">Resume</a></li><li><a href="projects.html">Projects</a></li><li><a href="blog.html" class="active">Blog</a></li><li><a href="contact.html">Contact</a></li></ul></nav><main class="page-container"><h1 class="page-title"><i class="fas fa-blog"></i> Blog</h1><div class="blog-grid" id="blogGrid"></div></main><footer><p>&copy; 2025 Charity Chepkirui | Cybersecurity Portfolio</p></footer><script>fetch("assets/data/blog.json").then(r=>r.json()).then(posts=>{const g=document.getElementById("blogGrid");posts.forEach(p=>{const c=document.createElement("article");c.className="blog-card";c.innerHTML=`${p.image?`<img src="${p.image}" alt="${p.title}" class="blog-img">`:""}<h2>${p.title}</h2><p class="blog-date"><i class="fas fa-calendar-alt"></i> ${p.date}</p><p class="blog-excerpt">${p.excerpt}</p><a href="blog-post.html?id=${p.id}" class="read-more">Read More →</a>`;g.appendChild(c)})}).catch(e=>console.error(e))</script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Charity Chepkirui | Blog</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/midnight-theme.css?v=20260829-3" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon.png">
+</head>
+<body>
+  <nav>
+    <div class="logo"><img src="assets/images/charity-logo.svg" alt="Charity Chepkirui" class="logo-img"></div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="resume.html">Resume</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="blog.html" class="active">Blog</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main class="page-container">
+    <h1 class="page-title"><i class="fas fa-blog"></i> Blog</h1>
+    <p class="blog-intro">Insights, projects, lessons and practical notes from my work across cybersecurity, data and AI.</p>
+    <div class="blog-grid" id="blogGrid"></div>
+  </main>
+
+  <footer><p>&copy; 2025 Charity Chepkirui | Professional Portfolio</p></footer>
+
+  <script>
+    fetch("assets/data/blog.json")
+      .then(r => r.json())
+      .then(posts => {
+        const g = document.getElementById("blogGrid");
+        posts.forEach(p => {
+          const c = document.createElement("a");
+          c.className = "blog-card";
+          c.href = `blog-post.html?id=${encodeURIComponent(p.id)}`;
+          c.setAttribute("aria-label", `Read ${p.title}`);
+          c.innerHTML = `
+            ${p.image ? `<img src="${p.image}" alt="${p.title}" class="blog-img">` : ""}
+            <div class="blog-card-body">
+              <h2>${p.title}</h2>
+              <p class="blog-date"><i class="fas fa-calendar-alt"></i> ${p.date}</p>
+              <p class="blog-excerpt">${p.excerpt}</p>
+              <span class="read-more">Read Article <i class="fas fa-arrow-right"></i></span>
+            </div>`;
+          g.appendChild(c);
+        });
+      })
+      .catch(e => console.error(e));
+  </script>
+</body>
+</html>
