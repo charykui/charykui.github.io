@@ -1,16 +1,21 @@
 /* -------- My Work Selection -------- */
-.work-intro { max-width: 720px; margin: -0.75rem auto 1.5rem; text-align: center; color: #AAB8CC; }
-.work-category-grid { max-width: 1100px; margin: 0 auto 2rem; padding: 0 1rem; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem; }
-.work-category-card { display:block; overflow:hidden; padding:0; background:#17243A; border-radius:14px; box-shadow:0 3px 12px rgba(0,0,0,.28); text-decoration:none; color:#CBD5E1; border:1px solid #24344D; transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease; }
+.work-intro { max-width:720px; margin:-.75rem auto 1.2rem; text-align:center; color:#AAB8CC; }
+.work-carousel-wrap { max-width:1160px; margin:0 auto 2rem; padding:0 3.4rem; position:relative; box-sizing:border-box; }
+.work-category-grid { display:flex; gap:1rem; overflow-x:auto; overflow-y:hidden; scroll-behavior:smooth; scroll-snap-type:x mandatory; scrollbar-width:none; padding:.7rem .25rem 1.2rem; }
+.work-category-grid::-webkit-scrollbar { display:none; }
+.work-category-card { flex:0 0 260px; display:block; overflow:hidden; padding:0; background:#17243A; border-radius:14px; box-shadow:0 3px 12px rgba(0,0,0,.28); text-decoration:none; color:#CBD5E1; border:1px solid #24344D; transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease; scroll-snap-align:start; }
 .work-category-card:hover { transform:translateY(-5px); box-shadow:0 10px 26px rgba(0,0,0,.35); border-color:#3B82F6; }
-.work-category-image { width:100%; height:145px; object-fit:cover; display:block; filter:saturate(.9) brightness(.82); transition:transform .3s ease,filter .3s ease; }
-.work-category-card:hover .work-category-image { transform:scale(1.025); filter:saturate(1) brightness(.92); }
-.work-category-body { padding:1rem 1.15rem 1.1rem; }
-.work-icon { width:44px; height:44px; display:flex; align-items:center; justify-content:center; border-radius:50%; background:#1E304A; color:#60A5FA; font-size:1.15rem; margin-bottom:.65rem; }
-.work-category-card h2 { margin:0 0 .4rem; font-size:1.18rem; color:#F1F5F9; }
-.work-category-card p { margin:0 0 .75rem; font-size:.9rem; line-height:1.45; color:#AAB8CC; }
-.work-category-card span { color:#60A5FA; font-weight:600; font-size:.88rem; }
+.work-category-image { width:100%; height:125px; object-fit:cover; display:block; filter:saturate(.9) brightness(.82); transition:transform .3s ease,filter .3s ease; }
+.work-category-card:hover .work-category-image { transform:scale(1.025); filter:saturate(1) brightness(.94); }
+.work-category-body { padding:.85rem 1rem .95rem; }
+.work-icon { width:38px; height:38px; display:flex; align-items:center; justify-content:center; border-radius:50%; background:#1E304A; color:#60A5FA; font-size:1rem; margin-bottom:.55rem; }
+.work-category-card h2 { margin:0 0 .35rem; font-size:1.08rem; color:#F1F5F9; }
+.work-category-card p { margin:0 0 .65rem; font-size:.82rem; line-height:1.4; color:#AAB8CC; }
+.work-category-card span { color:#60A5FA; font-weight:600; font-size:.82rem; }
+.work-carousel-btn { position:absolute; top:50%; transform:translateY(-50%); width:42px; height:42px; border-radius:50%; border:1px solid #3B82F6; background:#17243A; color:#60A5FA; cursor:pointer; z-index:2; box-shadow:0 5px 15px rgba(0,0,0,.3); transition:all .2s ease; }
+.work-carousel-btn:hover { background:#278FFF; color:#fff; transform:translateY(-50%) scale(1.08); box-shadow:0 8px 20px rgba(13,104,229,.3); }
+.work-carousel-btn.prev { left:.5rem; }.work-carousel-btn.next { right:.5rem; }
 .back-to-work { max-width:1100px; margin:1.1rem auto .5rem; padding:0 1rem; }
 .back-to-work a { display:inline-flex; align-items:center; gap:.65rem; padding:.62rem 1.15rem; border:2px solid #1785F7; border-radius:999px; color:#F2F7FF; background:rgba(3,13,31,.55); text-decoration:none; font-weight:700; font-size:.9rem; transition:all .2s ease; }
 .back-to-work a:hover { background:#278FFF; color:#fff; transform:translateX(-2px); box-shadow:0 8px 20px rgba(13,104,229,.22); }
-@media (max-width:700px) { .work-category-grid{grid-template-columns:1fr}.work-category-image{height:170px} }
+@media(max-width:700px){.work-carousel-wrap{padding:0 2.8rem}.work-category-card{flex-basis:235px}.work-category-image{height:120px}.work-carousel-btn{width:38px;height:38px}.work-carousel-btn.prev{left:.25rem}.work-carousel-btn.next{right:.25rem}}
