@@ -26,3 +26,27 @@ a.blog-card:hover{transform:translateY(-4px);box-shadow:0 9px 22px rgba(0,0,0,.3
 .detail-card{background:#17243A!important;color:#CBD5E1!important;border:1px solid #24344D!important;box-shadow:0 3px 14px rgba(0,0,0,.3)!important}.detail-card h1{color:#60A5FA!important}.detail-card h2{color:#93C5FD!important}.detail-card p,.detail-card li{color:#D5DEEA!important}.detail-card strong{color:#F1F5F9}.challenge-item{background:#1E304A;border:1px solid #2B405D;color:#D5DEEA}.detail-card .screenshot{border:1px solid #334B6B}
 input,textarea,select,.contact-form input,.contact-form textarea{background:#17243A;color:#E2E8F0;border-color:#334155}.popup-box{background:#17243A;color:#E2E8F0}.btn-cv,.contact-form button{background:#3B82F6;color:#fff}.circle-btn{color:#60A5FA;border-color:#3B82F6}.circle-btn:hover{background:#3B82F6;color:#fff}
 @media(max-width:700px){.blog-grid{grid-template-columns:1fr}.blog-card .blog-img{height:115px}.back-link,.back-to-work a{font-size:.88rem;padding:.58rem .9rem}}
+
+/* Skills overview: groups the All view into five capability areas while preserving every detailed category */
+@supports selector(.skills:has(.tab-btn.active)){
+.skills:has(.tab-btn.active[data-category="all"]):has(.skill-search:placeholder-shown) .skills-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:.65rem}
+.skills:has(.tab-btn.active[data-category="all"]):has(.skill-search:placeholder-shown) .skill-card:nth-child(n+6){display:none!important}
+.skills:has(.tab-btn.active[data-category="all"]):has(.skill-search:placeholder-shown) .skill-card:nth-child(-n+5){min-height:118px;padding:1rem!important;border-radius:12px;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden;background:linear-gradient(135deg,#182A43,#122238);border-color:#29415F;transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease}
+.skills:has(.tab-btn.active[data-category="all"]):has(.skill-search:placeholder-shown) .skill-card:nth-child(-n+5):hover{transform:translateY(-3px);border-color:#3B82F6;box-shadow:0 8px 20px rgba(0,0,0,.22)}
+.skills:has(.tab-btn.active[data-category="all"]):has(.skill-search:placeholder-shown) .skill-card:nth-child(-n+5){font-size:0;color:transparent}
+.skills:has(.tab-btn.active[data-category="all"]):has(.skill-search:placeholder-shown) .skill-card:nth-child(1):before{content:"Cybersecurity & Cloud"}
+.skills:has(.tab-btn.active[data-category="all"]):has(.skill-search:placeholder-shown) .skill-card:nth-child(2):before{content:"Data Annotation & AI"}
+.skills:has(.tab-btn.active[data-category="all"]):has(.skill-search:placeholder-shown) .skill-card:nth-child(3):before{content:"Data Analytics"}
+.skills:has(.tab-btn.active[data-category="all"]):has(.skill-search:placeholder-shown) .skill-card:nth-child(4):before{content:"Graphic Design"}
+.skills:has(.tab-btn.active[data-category="all"]):has(.skill-search:placeholder-shown) .skill-card:nth-child(5):before{content:"Web & Development"}
+.skills:has(.tab-btn.active[data-category="all"]):has(.skill-search:placeholder-shown) .skill-card:nth-child(-n+5):before{display:block;font-size:.84rem;line-height:1.25;color:#F1F5F9;font-weight:700;margin-bottom:.5rem}
+.skills:has(.tab-btn.active[data-category="all"]):has(.skill-search:placeholder-shown) .skill-card:nth-child(1):after{content:"Cloud Security · IAM · Vulnerability Assessment · SIEM"}
+.skills:has(.tab-btn.active[data-category="all"]):has(.skill-search:placeholder-shown) .skill-card:nth-child(2):after{content:"Image · Video · Audio · Text Annotation · AI Evaluation"}
+.skills:has(.tab-btn.active[data-category="all"]):has(.skill-search:placeholder-shown) .skill-card:nth-child(3):after{content:"Data Cleaning · Excel · SQL · Visualization · Dashboards"}
+.skills:has(.tab-btn.active[data-category="all"]):has(.skill-search:placeholder-shown) .skill-card:nth-child(4):after{content:"Social Media Graphics · Presentations · Posters · Branding"}
+.skills:has(.tab-btn.active[data-category="all"]):has(.skill-search:placeholder-shown) .skill-card:nth-child(5):after{content:"HTML · CSS · JavaScript · Responsive Design · Git/GitHub"}
+.skills:has(.tab-btn.active[data-category="all"]):has(.skill-search:placeholder-shown) .skill-card:nth-child(-n+5):after{display:block;font-size:.69rem;line-height:1.45;color:#AAB8CC}
+.skills:has(.tab-btn.active[data-category="all"]):has(.skill-search:placeholder-shown) .tab-btn[data-category="all"]{font-size:0}
+.skills:has(.tab-btn.active[data-category="all"]):has(.skill-search:placeholder-shown) .tab-btn[data-category="all"]:after{content:"Overview";font-size:.82rem}
+@media(max-width:600px){.skills:has(.tab-btn.active[data-category="all"]):has(.skill-search:placeholder-shown) .skills-grid{grid-template-columns:1fr}}
+}
