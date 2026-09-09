@@ -1,0 +1,18 @@
+{
+  "title": "Personal Portfolio Website",
+  "description": "Sample responsive portfolio project demonstrating the structure and presentation of professional experience, skills, projects and contact information.",
+  "objective": "Demonstrate practical front-end development skills through a responsive, organized and professional portfolio website.",
+  "steps": [
+    "Planned the main portfolio sections and navigation structure.",
+    "Built the page structure using semantic HTML.",
+    "Styled the interface with CSS for a consistent visual presentation.",
+    "Added JavaScript functionality where required for interactive elements.",
+    "Tested the layout and navigation across different screen sizes."
+  ],
+  "results": "Created a responsive sample portfolio structure demonstrating front-end development, content organization and user-focused presentation.",
+  "tools": ["HTML", "CSS", "JavaScript", "GitHub Pages"],
+  "skills": ["Responsive Web Design", "Front-End Development", "UI Structure", "Git & GitHub"],
+  "date": "2026",
+  "screenshots": [],
+  "video": ""
+}
