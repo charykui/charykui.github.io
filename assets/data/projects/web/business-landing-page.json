@@ -1,0 +1,18 @@
+{
+  "title": "Business Landing Page",
+  "description": "Sample conversion-focused landing page concept for presenting a business service, value proposition and clear call to action.",
+  "objective": "Demonstrate front-end skills in creating a focused landing page with clear content hierarchy and responsive layout.",
+  "steps": [
+    "Defined the main value proposition and page structure.",
+    "Organized the content into a clear introduction, service information and call to action.",
+    "Built the layout using HTML and CSS.",
+    "Added JavaScript where needed for interactive behavior.",
+    "Reviewed spacing, readability and responsiveness across screen sizes."
+  ],
+  "results": "Created a sample business landing page structure designed to communicate a service clearly and guide visitors toward a defined action.",
+  "tools": ["HTML", "CSS", "JavaScript"],
+  "skills": ["Landing Page Design", "Responsive Design", "UI Layout", "Front-End Development"],
+  "date": "2026",
+  "screenshots": [],
+  "video": ""
+}
