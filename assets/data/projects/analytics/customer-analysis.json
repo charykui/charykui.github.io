@@ -1,0 +1,19 @@
+{
+  "title": "Customer Data Analysis",
+  "description": "Sample analytics case study exploring customer segments, purchasing patterns and business indicators using structured data.",
+  "objective": "Demonstrate how data can be cleaned, queried and analyzed to identify patterns that support practical business decisions.",
+  "steps": [
+    "Reviewed the available customer and transaction fields.",
+    "Checked data quality and prepared the dataset for analysis.",
+    "Grouped records into meaningful customer segments.",
+    "Analyzed purchasing patterns and summary indicators.",
+    "Presented the main observations in concise analytical outputs."
+  ],
+  "results": "Produced a sample customer analysis workflow showing how structured data can be transformed into useful business insights.",
+  "tools": ["Excel", "SQL", "Data Analysis"],
+  "skills": ["Data Cleaning", "SQL", "Customer Analysis", "Data Interpretation", "Reporting"],
+  "dataset": "Sample practice dataset",
+  "date": "2026",
+  "screenshots": [],
+  "video": ""
+}
