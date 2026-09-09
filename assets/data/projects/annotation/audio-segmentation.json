@@ -1,0 +1,24 @@
+{
+  "title": "Telephone Conversation Audio Segmentation",
+  "description": "Annotated a telephone conversation using Unitlab to create structured audio data for AI and speech-processing applications.",
+  "objective": "Create accurately segmented and speaker-labeled audio data that can support speech-processing and AI model development.",
+  "steps": [
+    "Reviewed the telephone conversation and annotation requirements.",
+    "Segmented the recording into individual speaker turns.",
+    "Identified and labeled speakers throughout the conversation.",
+    "Added accurate timestamps to each audio segment.",
+    "Reviewed the completed annotations for consistency and quality."
+  ],
+  "results": "Produced structured speaker-level audio segments with timestamps and consistent labels, followed by a quality review of the completed annotations.",
+  "screenshots": [],
+  "video": "",
+  "challenges": [
+    {
+      "problem": "Accurately identifying speaker changes and segment boundaries can be difficult in natural conversations.",
+      "solution": "Listened carefully to transitions and reviewed segment boundaries to maintain accurate speaker turns and timestamps."
+    }
+  ],
+  "tools": ["Unitlab"],
+  "skills": ["Audio Annotation", "Speaker Identification", "Audio Segmentation", "Timestamping", "Data Quality Assurance"],
+  "dataset": "Kaggle – Audio Dataset"
+}
