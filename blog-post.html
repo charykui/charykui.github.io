@@ -11,7 +11,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon.png">
 </head>
 <body>
-  <nav><div class="logo"><img src="assets/images/charity-logo.svg" alt="Charity Chepkirui" class="logo-img"></div><ul><li><a href="index.html">Home</a></li><li><a href="resume.html">Resume</a></li><li><a href="projects.html">Projects</a></li><li><a href="blog.html" class="active">Blog</a></li><li><a href="contact.html">Contact</a></li></ul></nav>
+  <nav><div class="logo"><img src="assets/images/charity-logo.svg" alt="Charity Chepkirui" class="logo-img"></div><ul><li><a href="index.html">Home</a></li><li><a href="resume.html">About</a></li><li><a href="services.html">Services</a></li><li><a href="projects.html">Projects</a></li><li><a href="blog.html" class="active">Blog</a></li><li><a href="contact.html">Contact</a></li></ul></nav>
   <main class="page-container blog-post-page"><a href="blog.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to Blog</a><article id="blogPostContent" class="blog-post-wrapper"></article></main>
   <footer><p>&copy; 2025 Charity Chepkirui | Professional Portfolio</p></footer>
   <script>const params=new URLSearchParams(window.location.search),postId=params.get("id");fetch(`assets/data/posts/${postId}.json`).then(response=>response.json()).then(post=>{document.getElementById("blogPostContent").innerHTML=`<h1>${post.title}</h1><p class="blog-date"><i class="fas fa-calendar-alt"></i> ${post.date}</p>${post.image?`<img src="${post.image}" alt="${post.title}" class="blog-post-img">`:""}<div class="blog-content">${post.content}</div>`}).catch(error=>{console.error("Error loading blog post:",error);document.getElementById("blogPostContent").innerHTML="<p>Post not found.</p>"});</script>
