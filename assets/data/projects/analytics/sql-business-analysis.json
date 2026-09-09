@@ -1,0 +1,19 @@
+{
+  "title": "SQL Business Analysis",
+  "description": "Sample SQL case study demonstrating how queries can be used to summarize transactions and answer practical business questions.",
+  "objective": "Demonstrate core SQL analysis techniques for extracting, filtering, aggregating and joining structured business data.",
+  "steps": [
+    "Reviewed the database structure and identified relevant tables and fields.",
+    "Used filtering to isolate records relevant to specific business questions.",
+    "Applied aggregation functions to summarize transaction data.",
+    "Used joins to combine related information across tables.",
+    "Reviewed query results and translated them into concise business observations."
+  ],
+  "results": "Produced a sample SQL analysis workflow covering filtering, aggregation and joins to answer practical business questions.",
+  "tools": ["SQL"],
+  "skills": ["SQL Queries", "Filtering", "Aggregation", "Joins", "Business Analysis"],
+  "dataset": "Sample practice dataset",
+  "date": "2026",
+  "screenshots": [],
+  "video": ""
+}
