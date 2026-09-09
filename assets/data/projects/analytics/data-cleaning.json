@@ -1,0 +1,25 @@
+{
+  "title": "Data Cleaning & Preparation",
+  "description": "Sample data preparation workflow demonstrating how common quality issues can be identified, corrected and validated before analysis.",
+  "objective": "Demonstrate a repeatable process for preparing structured data for reliable analysis and reporting.",
+  "steps": [
+    "Inspected the dataset for missing, duplicate and inconsistent records.",
+    "Identified fields requiring standardization and validation.",
+    "Cleaned duplicate and incomplete records where appropriate.",
+    "Standardized values and formats for consistent analysis.",
+    "Performed quality checks on the prepared dataset."
+  ],
+  "results": "Created a clean, structured sample dataset ready for downstream analysis and visualization.",
+  "challenges": [
+    {
+      "problem": "Inconsistent formats and incomplete records can affect the reliability of analysis.",
+      "solution": "Used systematic validation and standardization checks before finalizing the prepared data."
+    }
+  ],
+  "tools": ["Excel", "Spreadsheets"],
+  "skills": ["Data Cleaning", "Data Validation", "Quality Checks", "Data Preparation"],
+  "dataset": "Sample practice dataset",
+  "date": "2026",
+  "screenshots": [],
+  "video": ""
+}
