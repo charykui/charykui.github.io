@@ -1,0 +1,18 @@
+{
+  "title": "Educational Centre Website",
+  "description": "Sample website concept for presenting school information, programmes, announcements and contact details in a clear responsive interface.",
+  "objective": "Demonstrate how a structured website can organize information for an educational organization while maintaining a responsive user experience.",
+  "steps": [
+    "Planned the information architecture and main navigation.",
+    "Organized content into clear sections for programmes, information and contact details.",
+    "Designed responsive page layouts for different screen sizes.",
+    "Applied consistent typography, spacing and visual hierarchy.",
+    "Reviewed the interface for usability and content clarity."
+  ],
+  "results": "Created a sample educational website structure that presents institutional information in an organized and user-friendly format.",
+  "tools": ["HTML", "CSS", "JavaScript"],
+  "skills": ["Responsive Design", "UI Structure", "Content Organization", "Front-End Development"],
+  "date": "2026",
+  "screenshots": [],
+  "video": ""
+}
