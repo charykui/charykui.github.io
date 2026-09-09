@@ -1,0 +1,24 @@
+{
+  "title": "Traffic Video Annotation for License Plate Detection",
+  "description": "Annotated traffic video data for a computer vision dataset focused on vehicle and license plate detection.",
+  "objective": "Create accurate, consistent video annotations suitable for training and evaluating computer vision models for vehicle and license plate detection.",
+  "steps": [
+    "Reviewed the source traffic video and annotation requirements.",
+    "Used CVAT to annotate vehicles and license plates across video frames.",
+    "Created and reviewed bounding-box annotations for relevant objects.",
+    "Maintained consistent labels across sequential frames.",
+    "Performed quality checks for missing, inaccurate or inconsistent annotations."
+  ],
+  "results": "Produced structured video annotations with consistent object labels and bounding boxes, while applying quality checks to improve dataset reliability.",
+  "screenshots": [],
+  "video": "",
+  "challenges": [
+    {
+      "problem": "Objects can change position, scale and visibility across sequential video frames.",
+      "solution": "Reviewed neighboring frames carefully and maintained consistent bounding-box placement and labels throughout the sequence."
+    }
+  ],
+  "tools": ["CVAT", "Computer Vision"],
+  "skills": ["Video Annotation", "Object Detection", "Bounding Boxes", "Data Labeling", "Quality Assurance"],
+  "dataset": "Kaggle – License Plate Recognition for Red-Light Violation"
+}
