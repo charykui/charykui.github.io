@@ -1,0 +1,18 @@
+{
+  "title": "Web Application Interface",
+  "description": "Sample dashboard interface concept demonstrating navigation, cards, data summaries and responsive front-end layouts.",
+  "objective": "Demonstrate the ability to structure a practical web application interface with clear information hierarchy and responsive behavior.",
+  "steps": [
+    "Planned the dashboard structure and navigation flow.",
+    "Organized key information into cards and summary sections.",
+    "Designed a responsive interface using front-end technologies.",
+    "Applied consistent spacing, typography and component structure.",
+    "Reviewed the interface for usability across screen sizes."
+  ],
+  "results": "Created a sample responsive dashboard interface demonstrating UI structure, content hierarchy and front-end development skills.",
+  "tools": ["HTML", "CSS", "JavaScript"],
+  "skills": ["UI Design", "Responsive Layout", "Front-End Development", "Dashboard Interfaces"],
+  "date": "2026",
+  "screenshots": [],
+  "video": ""
+}
