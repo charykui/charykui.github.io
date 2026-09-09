@@ -1,0 +1,25 @@
+{
+  "title": "Sales Performance Dashboard",
+  "description": "Sample data analytics project demonstrating how sales data can be summarized into a clear dashboard for monitoring revenue, trends and product performance.",
+  "objective": "Demonstrate a practical workflow for transforming structured sales data into useful business insights and dashboard-ready metrics.",
+  "steps": [
+    "Reviewed the dataset structure and identified the main business metrics.",
+    "Cleaned and prepared the data for analysis.",
+    "Calculated summary metrics such as revenue, sales volume and product performance.",
+    "Organized the results into charts and dashboard-style views.",
+    "Reviewed the outputs for consistency and clear presentation."
+  ],
+  "results": "Created a sample dashboard concept that presents key sales indicators and trends in a format suitable for business reporting.",
+  "challenges": [
+    {
+      "problem": "Raw business data can contain inconsistent values and require preparation before visualization.",
+      "solution": "Applied a structured cleaning and validation workflow before calculating metrics and creating visual summaries."
+    }
+  ],
+  "tools": ["Excel", "Power BI", "Data Visualization"],
+  "skills": ["Data Cleaning", "Data Analysis", "Dashboard Design", "Data Visualization", "Business Reporting"],
+  "dataset": "Sample practice dataset",
+  "date": "2026",
+  "screenshots": [],
+  "video": ""
+}
