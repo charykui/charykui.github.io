@@ -30,7 +30,7 @@ input,textarea,select,.contact-form input,.contact-form textarea{background:#172
 /* Skills overview: groups the All view into five capability areas while preserving every detailed category */
 @supports selector(.skills:has(.tab-btn.active)){
 .skills:has(.tab-btn.active[data-category="all"]):has(.skill-search:placeholder-shown) .skills-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:.65rem}
-.skills:has(.tab-btn.active[data-category="all"]):has(.skill-search:placeholder-shown) .skill-card:nth-child(n+6){display:none!important}
+.skills:has(.tab-btn.active[data-category="all"]):has(.skill-search:placeholder-shown) .skills-grid .skill-card:nth-child(n+6){display:none!important}
 .skills:has(.tab-btn.active[data-category="all"]):has(.skill-search:placeholder-shown) .skill-card:nth-child(-n+5){min-height:118px;padding:1rem!important;border-radius:12px;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden;background:linear-gradient(135deg,#182A43,#122238);border-color:#29415F;transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease}
 .skills:has(.tab-btn.active[data-category="all"]):has(.skill-search:placeholder-shown) .skill-card:nth-child(-n+5):hover{transform:translateY(-3px);border-color:#3B82F6;box-shadow:0 8px 20px rgba(0,0,0,.22)}
 .skills:has(.tab-btn.active[data-category="all"]):has(.skill-search:placeholder-shown) .skill-card:nth-child(-n+5){font-size:0;color:transparent}
@@ -50,3 +50,42 @@ input,textarea,select,.contact-form input,.contact-form textarea{background:#172
 .skills:has(.tab-btn.active[data-category="all"]):has(.skill-search:placeholder-shown) .tab-btn[data-category="all"]:after{content:"Overview";font-size:.82rem}
 @media(max-width:600px){.skills:has(.tab-btn.active[data-category="all"]):has(.skill-search:placeholder-shown) .skills-grid{grid-template-columns:1fr}}
 }
+
+/* About page visual polish */
+.about-page .about-me{padding:1.6rem 2rem!important;border-radius:16px;box-shadow:0 8px 26px rgba(0,0,0,.25);text-align:center}
+.about-page .about-heading{justify-content:center;flex-direction:column;gap:.65rem;margin-bottom:1rem}
+.about-page .about-heading>div:last-child{display:flex;flex-direction:column;align-items:center}
+.about-page .about-avatar{width:76px;height:76px;flex-basis:76px}
+.about-page .about-heading h1{font-size:2rem!important;margin:.12rem 0 .2rem!important}
+.about-page .about-subtitle{font-size:.82rem;line-height:1.5}
+.about-page .about-copy{max-width:850px;margin:0 auto;text-align:center}
+.about-page .about-copy p{font-size:.88rem;line-height:1.65;margin:.65rem 0!important;color:#CBD5E1}
+.about-page .about-copy strong{color:#F1F5F9}
+.about-page .about-value-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.75rem;max-width:900px;margin:1.15rem auto .8rem}
+.about-page .about-value-grid>div{min-height:115px;padding:.9rem .75rem;background:linear-gradient(145deg,#1E304A,#17243A);border:1px solid #29415F;border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.35rem;transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease}
+.about-page .about-value-grid>div:hover{transform:translateY(-3px);border-color:#3B82F6;box-shadow:0 8px 22px rgba(0,0,0,.24)}
+.about-page .about-value-grid i{font-size:1rem;color:#60A5FA;margin-bottom:.15rem}
+.about-page .about-value-grid strong{font-size:.76rem;color:#F1F5F9}
+.about-page .about-value-grid span{font-size:.67rem;line-height:1.4;color:#AAB8CC}
+.about-page .about-closing{max-width:780px;margin:1rem auto .1rem!important;font-size:.8rem!important;line-height:1.55!important;color:#AAB8CC!important;font-style:italic}
+.about-page .about-actions{justify-content:center;margin-top:1rem}
+.about-page .about-btn{min-width:190px}
+.about-page .what-i-do,.about-page .skills,.about-page .experience,.about-page .certificates,.about-page .education{border-radius:14px;box-shadow:0 5px 18px rgba(0,0,0,.22);padding:1.2rem 1.35rem!important}
+.about-page .what-i-do h2,.about-page .skills h2,.about-page .experience h2,.about-page .certificates h2,.about-page .education h2{text-align:center;margin-bottom:.9rem!important}
+.about-page .about-services{grid-template-columns:repeat(4,minmax(0,1fr));gap:.75rem}
+.about-page .about-services>div{min-height:125px;padding:.85rem .75rem;border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;background:linear-gradient(145deg,#1E304A,#17243A);transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease}
+.about-page .about-services>div:hover{transform:translateY(-3px);border-color:#3B82F6;box-shadow:0 8px 22px rgba(0,0,0,.22)}
+.about-page .about-services i{font-size:1.1rem;margin-bottom:.15rem}
+.about-page .about-services h3{font-size:.8rem!important;margin:.3rem 0 .25rem}
+.about-page .about-services p{font-size:.68rem!important;line-height:1.4;margin:0!important}
+.about-page .skills-grid{gap:.55rem}
+.about-page .skill-card{border-radius:9px;transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease}
+.about-page .skill-card:hover{transform:translateY(-2px);border-color:#3B82F6;box-shadow:0 5px 14px rgba(0,0,0,.2)}
+.about-page .skill-categories{display:flex;justify-content:center;flex-wrap:wrap;gap:.45rem;margin-bottom:.7rem}
+.about-page .tab-btn{border-radius:999px;font-size:.72rem;padding:.45rem .75rem;cursor:pointer;transition:all .2s ease}
+.about-page .experience-item,.about-page .certificate-item,.about-page .education-item{border-radius:11px;transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease}
+.about-page .experience-item:hover,.about-page .certificate-item:hover,.about-page .education-item:hover{transform:translateY(-2px);border-color:#3B82F6;box-shadow:0 6px 16px rgba(0,0,0,.2)}
+.about-page .experience-item h3,.about-page .certificate-item h3,.about-page .education-item h3{color:#F1F5F9!important}
+.about-page .certificate-item a{font-weight:700;text-decoration:none}
+@media(max-width:800px){.about-page .about-value-grid,.about-page .about-services{grid-template-columns:repeat(2,minmax(0,1fr))}.about-page .about-me{padding:1.35rem!important}}
+@media(max-width:600px){.about-page .about-me{padding:1.15rem .9rem!important}.about-page .about-heading h1{font-size:1.65rem!important}.about-page .about-copy p{font-size:.82rem;line-height:1.55}.about-page .about-value-grid,.about-page .about-services{grid-template-columns:1fr}.about-page .about-value-grid>div{min-height:95px}.about-page .about-actions{flex-direction:column;align-items:center}.about-page .about-btn{width:100%;max-width:320px}.about-page .skill-categories{gap:.35rem}.about-page .tab-btn{font-size:.68rem;padding:.4rem .6rem}}
