@@ -17,11 +17,12 @@
     <h1 id="project-title">Loading...</h1>
     <p id="project-description"></p>
     <div id="project-meta" class="project-meta"></div>
-    <h2>Objective</h2><p id="project-objective"></p>
-    <h2>Steps</h2><ul id="project-steps"></ul>
-    <h2>Results</h2><p id="project-results"></p>
+    <div id="project-objective-section"><h2 id="objective-heading">Objective</h2><p id="project-objective"></p></div>
+    <div id="project-steps-section"><h2 id="steps-heading">Process</h2><ul id="project-steps"></ul></div>
+    <div id="project-results-section"><h2 id="results-heading">Results</h2><p id="project-results"></p></div>
+    <div id="project-extra-section" style="display:none"><h2 id="extra-heading"></h2><div id="project-extra"></div></div>
     <div id="project-challenges-section"><h2>Challenges & Solutions</h2><div id="project-challenges"></div></div>
-    <div id="project-screenshots-section"><h2>Screenshots</h2><div id="project-screenshots" class="screenshot-grid"></div></div>
+    <div id="project-screenshots-section"><h2>Project Screenshots</h2><div id="project-screenshots" class="screenshot-grid"></div></div>
     <div id="project-video-section"><h2>Video Walkthrough</h2><div id="project-video"></div></div>
     <a href="projects.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to Projects</a>
   </section></main>
@@ -34,29 +35,59 @@ async function loadProject(){
   try{
     const response=await fetch(file);if(!response.ok)throw new Error("Failed to load JSON: "+response.status);
     const project=await response.json();
+
+    document.title=`${project.title||"Project"} | Charity Chepkirui`;
     document.getElementById("project-title").textContent=project.title||"Untitled Project";
     document.getElementById("project-description").textContent=project.description||"";
-    document.getElementById("project-objective").textContent=project.objective||"No objective provided.";
+
     const meta=document.getElementById("project-meta");meta.innerHTML="";
     if(project.tools?.length)meta.innerHTML+=`<p><strong>Tools:</strong> ${project.tools.join(" · ")}</p>`;
+    if(project.technologies?.length)meta.innerHTML+=`<p><strong>Technologies:</strong> ${project.technologies.join(" · ")}</p>`;
     if(project.skills?.length)meta.innerHTML+=`<p><strong>Skills:</strong> ${project.skills.join(" · ")}</p>`;
     if(project.dataset)meta.innerHTML+=`<p><strong>Dataset:</strong> ${project.dataset}</p>`;
+    if(project.date)meta.innerHTML+=`<p><strong>Date:</strong> ${project.date}</p>`;
+    if(!meta.innerHTML)meta.style.display="none";
+
+    if(project.objective){document.getElementById("project-objective").textContent=project.objective}else document.getElementById("project-objective-section").style.display="none";
+
     const stepsList=document.getElementById("project-steps");stepsList.innerHTML="";
-    (project.steps||[]).forEach(step=>{const li=document.createElement("li");li.textContent=step;stepsList.appendChild(li)});
-    document.getElementById("project-results").textContent=project.results||"No results provided.";
+    if(project.steps?.length){
+      project.steps.forEach(step=>{const li=document.createElement("li");li.textContent=step;stepsList.appendChild(li)});
+      document.getElementById("steps-heading").textContent=project.stepsLabel||"Process";
+    }else document.getElementById("project-steps-section").style.display="none";
+
+    if(project.results){document.getElementById("project-results").textContent=project.results}else document.getElementById("project-results-section").style.display="none";
+
+    const extra=project.findings||project.features||project.highlights;
+    if(extra?.length){
+      document.getElementById("extra-heading").textContent=project.findings?"Key Findings":project.features?"Key Features":"Highlights";
+      const extraDiv=document.getElementById("project-extra");extraDiv.innerHTML="";
+      extra.forEach(item=>{const p=document.createElement("p");p.textContent=item;extraDiv.appendChild(p)});
+      document.getElementById("project-extra-section").style.display="block";
+    }
+
     const challengesDiv=document.getElementById("project-challenges");challengesDiv.innerHTML="";
-    if(project.challenges?.length){project.challenges.forEach(ch=>{const div=document.createElement("div");div.classList.add("challenge-item");div.innerHTML=`<p><strong>Problem:</strong> ${ch.problem}</p><p><strong>Solution:</strong> ${ch.solution}</p>`;challengesDiv.appendChild(div)})}else document.getElementById("project-challenges-section").style.display="none";
+    if(project.challenges?.length){
+      project.challenges.forEach(ch=>{const div=document.createElement("div");div.classList.add("challenge-item");div.innerHTML=`<p><strong>Problem:</strong> ${ch.problem}</p><p><strong>Solution:</strong> ${ch.solution}</p>`;challengesDiv.appendChild(div)})
+    }else document.getElementById("project-challenges-section").style.display="none";
+
     const screenshotDiv=document.getElementById("project-screenshots");screenshotDiv.innerHTML="";let screenshots=[],currentIndex=0;
-    if(project.screenshots?.length){project.screenshots.forEach(src=>{const img=document.createElement("img");img.src=src;img.alt=`${project.title} screenshot`;img.classList.add("screenshot");screenshotDiv.appendChild(img)});screenshots=Array.from(document.querySelectorAll(".screenshot"));screenshots.forEach((img,index)=>img.addEventListener("click",()=>openLightbox(index)))}else document.getElementById("project-screenshots-section").style.display="none";
+    if(project.screenshots?.length){
+      project.screenshots.forEach(src=>{const img=document.createElement("img");img.src=src;img.alt=`${project.title} screenshot`;img.classList.add("screenshot");screenshotDiv.appendChild(img)});
+      screenshots=Array.from(document.querySelectorAll(".screenshot"));
+      screenshots.forEach((img,index)=>img.addEventListener("click",()=>openLightbox(index)));
+    }else document.getElementById("project-screenshots-section").style.display="none";
+
     const lightbox=document.getElementById("lightbox"),lightboxImg=document.getElementById("lightbox-img");
     function openLightbox(index){currentIndex=index;lightbox.style.display="flex";lightboxImg.src=screenshots[currentIndex].src}
     function closeLightbox(){lightbox.style.display="none"}
     function showNext(){if(!screenshots.length)return;currentIndex=(currentIndex+1)%screenshots.length;lightboxImg.src=screenshots[currentIndex].src}
     function showPrev(){if(!screenshots.length)return;currentIndex=(currentIndex-1+screenshots.length)%screenshots.length;lightboxImg.src=screenshots[currentIndex].src}
     document.querySelector(".lightbox .close").onclick=closeLightbox;document.querySelector(".lightbox .next").onclick=showNext;document.querySelector(".lightbox .prev").onclick=showPrev;lightbox.addEventListener("click",e=>{if(e.target===lightbox)closeLightbox()});
+
     const videoDiv=document.getElementById("project-video");videoDiv.innerHTML="";
     if(project.video)videoDiv.innerHTML=`<div class="video-container"><iframe src="${project.video}" title="${project.title} video walkthrough" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>`;else document.getElementById("project-video-section").style.display="none";
-  }catch(error){console.error("ERROR:",error);document.querySelector(".detail-card").innerHTML="<h1>Error loading project</h1><a class='back-link' href='projects.html'>← Back to Projects</a>"}
+  }catch(error){console.error("ERROR:",error);document.querySelector(".detail-card").innerHTML="<h1>Error loading project</h1><p>Unable to load this project right now.</p><a class='back-link' href='projects.html'>← Back to Projects</a>"}
 }
 loadProject();
   </script>
