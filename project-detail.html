@@ -9,6 +9,42 @@
   <link rel="stylesheet" href="assets/css/midnight-theme.css?v=20260908-1" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon.png">
+  <style>
+    /* Graphic Design project screenshots: preserve their natural proportions. */
+    .graphic-design-project .screenshot-grid {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      justify-content: center;
+      gap: 1.25rem;
+      margin-top: 1rem;
+    }
+
+    .graphic-design-project .screenshot-grid .screenshot {
+      width: auto;
+      max-width: 100%;
+      height: auto;
+      max-height: 420px;
+      min-width: 220px;
+      object-fit: contain;
+      display: block;
+      margin: 0;
+      cursor: zoom-in;
+      border-radius: 10px;
+    }
+
+    @media (max-width: 700px) {
+      .graphic-design-project .screenshot-grid {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .graphic-design-project .screenshot-grid .screenshot {
+        max-height: 360px;
+        min-width: 0;
+      }
+    }
+  </style>
 </head>
 <body>
   <nav><div class="logo"><img src="assets/images/charity-logo.svg" alt="Charity Chepkirui" class="logo-img"></div><ul><li><a href="index.html">Home</a></li><li><a href="resume.html">Resume</a></li><li><a href="projects.html" class="active">Projects</a></li><li><a href="blog.html">Blog</a></li><li><a href="contact.html">Contact</a></li></ul></nav>
@@ -35,6 +71,9 @@ async function loadProject(){
   try{
     const response=await fetch(file);if(!response.ok)throw new Error("Failed to load JSON: "+response.status);
     const project=await response.json();
+
+    // Apply the natural-size gallery only to Graphic Design project detail pages.
+    if(file.includes("/design/"))document.querySelector(".detail-card").classList.add("graphic-design-project");
 
     document.title=`${project.title||"Project"} | Charity Chepkirui`;
     document.getElementById("project-title").textContent=project.title||"Untitled Project";
@@ -86,7 +125,7 @@ async function loadProject(){
     document.querySelector(".lightbox .close").onclick=closeLightbox;document.querySelector(".lightbox .next").onclick=showNext;document.querySelector(".lightbox .prev").onclick=showPrev;lightbox.addEventListener("click",e=>{if(e.target===lightbox)closeLightbox()});
 
     const videoDiv=document.getElementById("project-video");videoDiv.innerHTML="";
-    if(project.video)videoDiv.innerHTML=`<div class="video-container"><iframe src="${project.video}" title="${project.title} video walkthrough" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>`;else document.getElementById("project-video-section").style.display="none";
+    if(project.video)videoDiv.innerHTML=`<div class="video-container"><iframe src="${project.video}" title="${project.title} video walkthrough" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`;else document.getElementById("project-video-section").style.display="none";
   }catch(error){console.error("ERROR:",error);document.querySelector(".detail-card").innerHTML="<h1>Error loading project</h1><p>Unable to load this project right now.</p><a class='back-link' href='projects.html'>← Back to Projects</a>"}
 }
 loadProject();
