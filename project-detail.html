@@ -4,131 +4,290 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Charity Chepkirui | Project Details</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css" />
   <link rel="stylesheet" href="assets/css/midnight-theme.css?v=20260908-1" />
   <link rel="stylesheet" href="assets/css/project-showcase.css?v=20261117-1" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon.png">
-  <style>
-    /* Graphic Design project screenshots: preserve their natural proportions. */
-    .graphic-design-project .screenshot-grid {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: flex-start;
-      justify-content: center;
-      gap: 1.25rem;
-      margin-top: 1rem;
-    }
-
-    .graphic-design-project .screenshot-grid .screenshot {
-      width: auto;
-      max-width: 100%;
-      height: auto;
-      max-height: 420px;
-      min-width: 220px;
-      object-fit: contain;
-      display: block;
-      margin: 0;
-      cursor: zoom-in;
-      border-radius: 10px;
-    }
-
-    @media (max-width: 700px) {
-      .graphic-design-project .screenshot-grid {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .graphic-design-project .screenshot-grid .screenshot {
-        max-height: 360px;
-        min-width: 0;
-      }
-    }
-  </style>
 </head>
 <body class="project-detail-page">
-  <nav><div class="logo"><img src="assets/images/charity-logo.svg" alt="Charity Chepkirui" class="logo-img"></div><ul><li><a href="index.html">Home</a></li><li><a href="resume.html">About</a></li><li><a href="projects.html" class="active">Projects</a></li><li><a href="blog.html">Blog</a></li><li><a href="contact.html">Contact</a></li></ul></nav>
-  <main><section class="detail-card">
-    <div class="detail-hero"><a href="cybersecurity.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to Projects</a><div class="detail-eyebrow"><i class="fas fa-folder-open"></i> Project Case Study</div>
-    <h1 id="project-title">Loading...</h1>
-    <p id="project-description"></p></div>
-    <div id="project-meta" class="project-meta"></div>
-    <div id="project-objective-section" class="detail-section"><h2 id="objective-heading">Objective</h2><p id="project-objective"></p></div>
-    <div id="project-steps-section" class="detail-section"><h2 id="steps-heading">Process</h2><ul id="project-steps"></ul></div>
-    <div id="project-results-section" class="detail-section"><h2 id="results-heading">Results</h2><p id="project-results"></p></div>
-    <div id="project-extra-section" class="detail-section" style="display:none"><h2 id="extra-heading"></h2><div id="project-extra"></div></div>
-    <div id="project-challenges-section" class="detail-section"><h2>Challenges & Solutions</h2><div id="project-challenges"></div></div>
-    <div id="project-screenshots-section" class="detail-section"><h2>Project Screenshots</h2><div id="project-screenshots" class="screenshot-grid"></div></div>
-    <div id="project-video-section" class="detail-section"><h2>Video Walkthrough</h2><div id="project-video"></div></div>
-    <div class="detail-footer"><a href="cybersecurity.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to Projects</a><p class="detail-footnote">IT &amp; Cybersecurity Portfolio · Charity Chepkirui</p></div>
-  </section></main>
-  <div id="lightbox" class="lightbox"><span class="close">&times;</span><span class="prev">&#10094;</span><img class="lightbox-content" id="lightbox-img"><span class="next">&#10095;</span></div>
-  <footer><p>&copy; 2025 Charity Chepkirui | Professional Portfolio</p></footer>
+  <nav>
+    <div class="logo"><img src="assets/images/charity-logo.svg" alt="Charity Chepkirui" class="logo-img"></div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="resume.html">About</a></li>
+      <li><a href="projects.html" class="active">Projects</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main class="case-study-shell">
+    <div class="case-breadcrumb">
+      <a href="cybersecurity.html"><i class="fas fa-arrow-left"></i> All projects</a>
+      <span>/</span>
+      <span>Project case study</span>
+    </div>
+
+    <article class="detail-card">
+      <header class="case-hero">
+        <div class="case-hero-glow" aria-hidden="true"></div>
+        <div class="detail-eyebrow"><i class="fas fa-folder-open"></i> Project case study</div>
+        <h1 id="project-title">Loading project...</h1>
+        <p id="project-description"></p>
+        <div class="case-hero-bottom">
+          <span><i class="fas fa-layer-group"></i> Practical project</span>
+          <span><i class="fas fa-user-shield"></i> IT &amp; Cybersecurity Portfolio</span>
+        </div>
+      </header>
+
+      <div class="case-layout">
+        <div class="case-content">
+          <section id="project-objective-section" class="case-section">
+            <div class="section-kicker">01 / Overview</div>
+            <h2 id="objective-heading">Project objective</h2>
+            <p id="project-objective"></p>
+          </section>
+
+          <section id="project-steps-section" class="case-section">
+            <div class="section-kicker">02 / Execution</div>
+            <h2 id="steps-heading">Process &amp; implementation</h2>
+            <ul id="project-steps"></ul>
+          </section>
+
+          <section id="project-results-section" class="case-section">
+            <div class="section-kicker">03 / Outcome</div>
+            <h2 id="results-heading">Results &amp; learning</h2>
+            <p id="project-results"></p>
+          </section>
+
+          <section id="project-extra-section" class="case-section" style="display:none">
+            <div class="section-kicker">04 / Technical detail</div>
+            <h2 id="extra-heading"></h2>
+            <div id="project-extra"></div>
+          </section>
+
+          <section id="project-challenges-section" class="case-section">
+            <div class="section-kicker">Project reflection</div>
+            <h2>Challenges &amp; solutions</h2>
+            <div id="project-challenges"></div>
+          </section>
+
+          <section id="project-screenshots-section" class="case-section">
+            <div class="section-kicker">Visual evidence</div>
+            <h2>Project gallery</h2>
+            <p class="gallery-intro">Selected screenshots and supporting visuals from this project. Select an image to view it in more detail.</p>
+            <div id="project-screenshots" class="screenshot-grid"></div>
+          </section>
+
+          <section id="project-video-section" class="case-section">
+            <div class="section-kicker">Walkthrough</div>
+            <h2>Video walkthrough</h2>
+            <div id="project-video"></div>
+          </section>
+        </div>
+
+        <aside class="case-sidebar" aria-label="Project information">
+          <section class="sidebar-panel">
+            <div class="sidebar-label">Project at a glance</div>
+            <h2>Project information</h2>
+            <div id="project-meta" class="project-meta"></div>
+          </section>
+          <div class="sidebar-note">
+            <i class="fas fa-circle-info"></i>
+            <p>This case study outlines the project context, work completed, tools used and supporting evidence.</p>
+          </div>
+        </aside>
+      </div>
+
+      <footer class="case-footer">
+        <a href="cybersecurity.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to projects</a>
+        <span>IT &amp; Cybersecurity Portfolio <b>·</b> Charity Chepkirui</span>
+      </footer>
+    </article>
+  </main>
+
+  <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Project image viewer">
+    <span class="close" role="button" tabindex="0" aria-label="Close image viewer">&times;</span>
+    <span class="prev" role="button" tabindex="0" aria-label="Previous image">&#10094;</span>
+    <img class="lightbox-content" id="lightbox-img" alt="Enlarged project screenshot">
+    <span class="next" role="button" tabindex="0" aria-label="Next image">&#10095;</span>
+  </div>
+
+  <footer><p>&copy; 2026 Charity Chepkirui | Professional Portfolio</p></footer>
+
   <script>
 async function loadProject(){
-  const params=new URLSearchParams(window.location.search),file=params.get("file");
-  if(!file){document.querySelector(".detail-card").innerHTML="<h1>No project selected</h1><a class='back-link' href='projects.html'>← Back to Projects</a>";return}
-  try{
-    const response=await fetch(file);if(!response.ok)throw new Error("Failed to load JSON: "+response.status);
-    const project=await response.json();
+  const params = new URLSearchParams(window.location.search);
+  const file = params.get("file");
+  const card = document.querySelector(".detail-card");
 
-    // Apply the natural-size gallery only to Graphic Design project detail pages.
-    if(file.includes("/design/"))document.querySelector(".detail-card").classList.add("graphic-design-project");
+  if(!file){
+    card.innerHTML = "<div class='case-hero'><h1>No project selected</h1><p>Choose a project from the project library to view its details.</p></div><div style='padding:28px'><a class='back-link' href='cybersecurity.html'>← Back to Projects</a></div>";
+    return;
+  }
 
-    document.title=`${project.title||"Project"} | Charity Chepkirui`;
-    document.getElementById("project-title").textContent=project.title||"Untitled Project";
-    document.getElementById("project-description").textContent=project.description||"";
+  try {
+    const response = await fetch(file);
+    if(!response.ok) throw new Error("Failed to load project: " + response.status);
+    const project = await response.json();
 
-    const meta=document.getElementById("project-meta");meta.innerHTML="";
-    if(project.tools?.length)meta.innerHTML+=`<p><strong>Tools:</strong> ${project.tools.join(" · ")}</p>`;
-    if(project.technologies?.length)meta.innerHTML+=`<p><strong>Technologies:</strong> ${project.technologies.join(" · ")}</p>`;
-    if(project.skills?.length)meta.innerHTML+=`<p><strong>Skills:</strong> ${project.skills.join(" · ")}</p>`;
-    if(project.dataset)meta.innerHTML+=`<p><strong>Dataset:</strong> ${project.dataset}</p>`;
-    if(project.date)meta.innerHTML+=`<p><strong>Date:</strong> ${project.date}</p>`;
-    if(!meta.innerHTML)meta.style.display="none";
+    if(file.includes("/design/")) card.classList.add("graphic-design-project");
 
-    if(project.objective){document.getElementById("project-objective").textContent=project.objective}else document.getElementById("project-objective-section").style.display="none";
+    document.title = (project.title || "Project") + " | Charity Chepkirui";
+    document.getElementById("project-title").textContent = project.title || "Untitled Project";
+    document.getElementById("project-description").textContent = project.description || "";
 
-    const stepsList=document.getElementById("project-steps");stepsList.innerHTML="";
-    if(project.steps?.length){
-      project.steps.forEach(step=>{const li=document.createElement("li");li.textContent=step;stepsList.appendChild(li)});
-      document.getElementById("steps-heading").textContent=project.stepsLabel||"Process";
-    }else document.getElementById("project-steps-section").style.display="none";
+    const meta = document.getElementById("project-meta");
+    meta.innerHTML = "";
+    const addMeta = (label, values) => {
+      if(!values || (Array.isArray(values) && !values.length)) return;
+      const row = document.createElement("p");
+      const strong = document.createElement("strong");
+      strong.textContent = label;
+      const value = document.createElement("span");
+      value.textContent = Array.isArray(values) ? values.join(" · ") : values;
+      row.append(strong, value);
+      meta.appendChild(row);
+    };
+    addMeta("Tools", project.tools);
+    addMeta("Technologies", project.technologies);
+    addMeta("Skills", project.skills);
+    addMeta("Dataset", project.dataset);
+    addMeta("Date", project.date);
+    if(!meta.children.length) meta.closest(".sidebar-panel").style.display = "none";
 
-    if(project.results){document.getElementById("project-results").textContent=project.results}else document.getElementById("project-results-section").style.display="none";
-
-    const extra=project.findings||project.features||project.highlights;
-    if(extra?.length){
-      document.getElementById("extra-heading").textContent=project.findings?"Key Findings":project.features?"Key Features":"Highlights";
-      const extraDiv=document.getElementById("project-extra");extraDiv.innerHTML="";
-      extra.forEach(item=>{const p=document.createElement("p");p.textContent=item;extraDiv.appendChild(p)});
-      document.getElementById("project-extra-section").style.display="block";
+    if(project.objective){
+      document.getElementById("project-objective").textContent = project.objective;
+    } else {
+      document.getElementById("project-objective-section").style.display = "none";
     }
 
-    const challengesDiv=document.getElementById("project-challenges");challengesDiv.innerHTML="";
-    if(project.challenges?.length){
-      project.challenges.forEach(ch=>{const div=document.createElement("div");div.classList.add("challenge-item");div.innerHTML=`<p><strong>Problem:</strong> ${ch.problem}</p><p><strong>Solution:</strong> ${ch.solution}</p>`;challengesDiv.appendChild(div)})
-    }else document.getElementById("project-challenges-section").style.display="none";
+    const stepsList = document.getElementById("project-steps");
+    stepsList.innerHTML = "";
+    if(project.steps && project.steps.length){
+      project.steps.forEach(step => {
+        const li = document.createElement("li");
+        li.textContent = step;
+        stepsList.appendChild(li);
+      });
+      document.getElementById("steps-heading").textContent = project.stepsLabel || "Process & implementation";
+    } else {
+      document.getElementById("project-steps-section").style.display = "none";
+    }
 
-    const screenshotDiv=document.getElementById("project-screenshots");screenshotDiv.innerHTML="";let screenshots=[],currentIndex=0;
-    if(project.screenshots?.length){
-      project.screenshots.forEach(src=>{const img=document.createElement("img");img.src=src;img.alt=`${project.title} screenshot`;img.classList.add("screenshot");screenshotDiv.appendChild(img)});
-      screenshots=Array.from(document.querySelectorAll(".screenshot"));
-      screenshots.forEach((img,index)=>img.addEventListener("click",()=>openLightbox(index)));
-    }else document.getElementById("project-screenshots-section").style.display="none";
+    if(project.results){
+      document.getElementById("project-results").textContent = project.results;
+    } else {
+      document.getElementById("project-results-section").style.display = "none";
+    }
 
-    const lightbox=document.getElementById("lightbox"),lightboxImg=document.getElementById("lightbox-img");
-    function openLightbox(index){currentIndex=index;lightbox.style.display="flex";lightboxImg.src=screenshots[currentIndex].src}
-    function closeLightbox(){lightbox.style.display="none"}
-    function showNext(){if(!screenshots.length)return;currentIndex=(currentIndex+1)%screenshots.length;lightboxImg.src=screenshots[currentIndex].src}
-    function showPrev(){if(!screenshots.length)return;currentIndex=(currentIndex-1+screenshots.length)%screenshots.length;lightboxImg.src=screenshots[currentIndex].src}
-    document.querySelector(".lightbox .close").onclick=closeLightbox;document.querySelector(".lightbox .next").onclick=showNext;document.querySelector(".lightbox .prev").onclick=showPrev;lightbox.addEventListener("click",e=>{if(e.target===lightbox)closeLightbox()});
+    const extra = project.findings || project.features || project.highlights;
+    if(extra && extra.length){
+      const heading = project.findings ? "Key findings" : project.features ? "Key features" : "Highlights";
+      document.getElementById("extra-heading").textContent = heading;
+      const extraDiv = document.getElementById("project-extra");
+      extraDiv.innerHTML = "";
+      extra.forEach(item => {
+        const p = document.createElement("p");
+        p.textContent = item;
+        extraDiv.appendChild(p);
+      });
+      document.getElementById("project-extra-section").style.display = "block";
+    }
 
-    const videoDiv=document.getElementById("project-video");videoDiv.innerHTML="";
-    if(project.video)videoDiv.innerHTML=`<div class="video-container"><iframe src="${project.video}" title="${project.title} video walkthrough" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`;else document.getElementById("project-video-section").style.display="none";
-  }catch(error){console.error("ERROR:",error);document.querySelector(".detail-card").innerHTML="<h1>Error loading project</h1><p>Unable to load this project right now.</p><a class='back-link' href='projects.html'>← Back to Projects</a>"}
+    const challengesDiv = document.getElementById("project-challenges");
+    challengesDiv.innerHTML = "";
+    if(project.challenges && project.challenges.length){
+      project.challenges.forEach(challenge => {
+        const item = document.createElement("div");
+        item.className = "challenge-item";
+        const problem = document.createElement("p");
+        const problemLabel = document.createElement("strong");
+        problemLabel.textContent = "Challenge: ";
+        problem.append(problemLabel, document.createTextNode(challenge.problem || ""));
+        const solution = document.createElement("p");
+        const solutionLabel = document.createElement("strong");
+        solutionLabel.textContent = "Solution: ";
+        solution.append(solutionLabel, document.createTextNode(challenge.solution || ""));
+        item.append(problem, solution);
+        challengesDiv.appendChild(item);
+      });
+    } else {
+      document.getElementById("project-challenges-section").style.display = "none";
+    }
+
+    const screenshotDiv = document.getElementById("project-screenshots");
+    screenshotDiv.innerHTML = "";
+    const screenshots = [];
+    let currentIndex = 0;
+    if(project.screenshots && project.screenshots.length){
+      project.screenshots.forEach(src => {
+        const img = document.createElement("img");
+        img.src = src;
+        img.alt = (project.title || "Project") + " screenshot";
+        img.className = "screenshot";
+        img.loading = "lazy";
+        screenshotDiv.appendChild(img);
+        screenshots.push(img);
+      });
+      screenshots.forEach((img, index) => img.addEventListener("click", () => openLightbox(index)));
+    } else {
+      document.getElementById("project-screenshots-section").style.display = "none";
+    }
+
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightbox-img");
+    function openLightbox(index){
+      currentIndex = index;
+      lightbox.style.display = "flex";
+      lightboxImg.src = screenshots[currentIndex].src;
+    }
+    function closeLightbox(){ lightbox.style.display = "none"; }
+    function showNext(){
+      if(!screenshots.length) return;
+      currentIndex = (currentIndex + 1) % screenshots.length;
+      lightboxImg.src = screenshots[currentIndex].src;
+    }
+    function showPrev(){
+      if(!screenshots.length) return;
+      currentIndex = (currentIndex - 1 + screenshots.length) % screenshots.length;
+      lightboxImg.src = screenshots[currentIndex].src;
+    }
+    document.querySelector(".lightbox .close").addEventListener("click", closeLightbox);
+    document.querySelector(".lightbox .next").addEventListener("click", showNext);
+    document.querySelector(".lightbox .prev").addEventListener("click", showPrev);
+    lightbox.addEventListener("click", event => { if(event.target === lightbox) closeLightbox(); });
+    document.addEventListener("keydown", event => {
+      if(lightbox.style.display !== "flex") return;
+      if(event.key === "Escape") closeLightbox();
+      if(event.key === "ArrowRight") showNext();
+      if(event.key === "ArrowLeft") showPrev();
+    });
+
+    const videoDiv = document.getElementById("project-video");
+    videoDiv.innerHTML = "";
+    if(project.video){
+      const wrap = document.createElement("div");
+      wrap.className = "video-container";
+      const frame = document.createElement("iframe");
+      frame.src = project.video;
+      frame.title = (project.title || "Project") + " video walkthrough";
+      frame.loading = "lazy";
+      frame.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+      frame.allowFullscreen = true;
+      wrap.appendChild(frame);
+      videoDiv.appendChild(wrap);
+    } else {
+      document.getElementById("project-video-section").style.display = "none";
+    }
+  } catch(error) {
+    console.error("Project loading error:", error);
+    card.innerHTML = "<div class='case-hero'><h1>Unable to load this project</h1><p>Please return to the project library and try again.</p></div><div style='padding:28px'><a class='back-link' href='cybersecurity.html'>← Back to Projects</a></div>";
+  }
 }
 loadProject();
   </script>
-</body></html>
+</body>
+</html>
