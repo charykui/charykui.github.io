@@ -127,3 +127,43 @@
 .project-detail-page .lightbox{z-index:2000}
 @media(max-width:850px){.project-detail-page .case-layout{grid-template-columns:1fr}.project-detail-page .case-sidebar{position:static;grid-template-columns:repeat(2,minmax(0,1fr))}.project-detail-page .sidebar-panel{grid-row:span 2}}
 @media(max-width:600px){.project-detail-page .case-study-shell{width:calc(100% - 24px);padding:16px 0 36px}.project-detail-page .detail-card{border-radius:17px}.project-detail-page .case-hero{padding:28px 22px}.project-detail-page .case-hero h1{font-size:2rem!important}.project-detail-page .case-hero #project-description{font-size:.91rem}.project-detail-page .case-hero-bottom{display:grid;gap:8px}.project-detail-page .case-layout{padding:25px 21px;gap:28px}.project-detail-page .case-section{padding-bottom:23px;margin-bottom:23px}.project-detail-page .case-section h2{font-size:1.15rem!important}.project-detail-page .case-section p,.project-detail-page .case-section li{font-size:.88rem!important}.project-detail-page .case-sidebar{grid-template-columns:1fr}.project-detail-page .sidebar-panel{grid-row:auto}.project-detail-page .screenshot-grid{grid-template-columns:1fr}.project-detail-page .screenshot-grid .screenshot{height:auto;max-height:340px;min-height:140px}.project-detail-page .case-footer{align-items:flex-start;flex-direction:column;padding:18px 21px}.project-detail-page .graphic-design-project .screenshot-grid{flex-direction:column;align-items:center}.project-detail-page .graphic-design-project .screenshot-grid .screenshot{max-height:340px}}
+
+
+/* Compact spacing refinement for individual project case studies */
+.project-detail-page .case-study-shell{padding-top:18px;padding-bottom:42px}
+.project-detail-page .case-breadcrumb{margin-bottom:12px;gap:8px}
+.project-detail-page .case-hero{padding:clamp(25px,3.8vw,42px)}
+.project-detail-page .case-hero h1{margin:12px 0 9px!important}
+.project-detail-page .case-hero #project-description{line-height:1.65}
+.project-detail-page .case-hero-bottom{margin-top:17px;gap:8px 18px}
+.project-detail-page .case-layout{gap:clamp(20px,3vw,36px);padding:clamp(22px,3vw,34px)}
+.project-detail-page .case-section{padding-bottom:21px;margin-bottom:21px}
+.project-detail-page .section-kicker{margin-bottom:6px}
+.project-detail-page .case-section h2{margin-bottom:9px!important}
+.project-detail-page .case-section p{margin-bottom:7px}
+.project-detail-page .case-section ul{margin-top:8px}
+.project-detail-page .case-section li{margin-bottom:8px;line-height:1.72!important}
+.project-detail-page .case-sidebar{gap:10px}
+.project-detail-page .sidebar-panel{padding:16px}
+.project-detail-page .sidebar-panel h2{margin:6px 0 12px}
+.project-detail-page .project-meta{gap:9px}
+.project-detail-page .project-meta p{padding-bottom:8px!important}
+.project-detail-page .sidebar-note{padding:12px;gap:9px}
+.project-detail-page .screenshot-grid{gap:11px;margin-top:12px}
+.project-detail-page .screenshot-grid .screenshot{height:200px;padding:7px}
+.project-detail-page .challenge-item{padding:13px 15px;margin:9px 0}
+.project-detail-page .challenge-item p{margin-bottom:5px!important;line-height:1.65!important}
+.project-detail-page .case-footer{padding-top:15px;padding-bottom:15px}
+@media(max-width:600px){
+ .project-detail-page .case-study-shell{padding-top:12px;padding-bottom:28px}
+ .project-detail-page .case-hero{padding:23px 19px}
+ .project-detail-page .case-hero h1{margin:10px 0 8px!important}
+ .project-detail-page .case-hero-bottom{margin-top:13px}
+ .project-detail-page .case-layout{padding:21px 18px;gap:22px}
+ .project-detail-page .case-section{padding-bottom:18px;margin-bottom:18px}
+ .project-detail-page .case-section h2{margin-bottom:8px!important}
+ .project-detail-page .case-section li{margin-bottom:7px}
+ .project-detail-page .sidebar-panel{padding:15px}
+ .project-detail-page .screenshot-grid .screenshot{max-height:300px}
+ .project-detail-page .case-footer{padding:15px 18px}
+}
