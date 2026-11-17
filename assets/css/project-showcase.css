@@ -167,3 +167,8 @@
  .project-detail-page .screenshot-grid .screenshot{max-height:300px}
  .project-detail-page .case-footer{padding:15px 18px}
 }
+
+
+/* Smaller project title on individual project detail pages */
+.project-detail-page .case-hero h1{font-size:clamp(1.75rem,3.4vw,2.55rem)!important;line-height:1.16!important;letter-spacing:-.03em!important}
+@media(max-width:600px){.project-detail-page .case-hero h1{font-size:1.65rem!important;line-height:1.2!important}}
